@@ -1,6 +1,16 @@
 import { CiLocationOn } from "react-icons/ci";
 import { FaPhoneAlt } from "react-icons/fa";
+import { FaArrowCircleRight } from "react-icons/fa";
+import { FaArrowCircleLeft } from "react-icons/fa";
+import { useEffect, useState } from "react";
+import Date from "./Date";
+
 export default function Header() {
+  const [controller, setController] = useState(0);
+  const [show, setShow] = useState(false);
+  const handleOver = () => {
+    setShow((prev) => !prev);
+  };
   const Carousel = [
     {
       image: "images/luxry.png",
@@ -13,11 +23,43 @@ export default function Header() {
       content2: "HOTEL DE BENTLEY",
     },
   ];
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setController((prevController) => {
+        if (prevController < Carousel.length - 1) {
+          return prevController + 1;
+        } else {
+          return 0; // Reset to 0
+        }
+      });
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const handleNext = () => {
+    setController((prevController) => {
+      if (prevController < Carousel.length - 1) {
+        return prevController + 1;
+      } else {
+        return 0;
+      }
+    });
+  };
+  const handleDecrease = () => {
+    setController((prevController) => {
+      if (prevController > 0) {
+        return prevController - 1;
+      } else {
+        return 0;
+      }
+    });
+  };
   return (
     <>
       <div className="heading">
-        <div className="top-image">
-          <img src="/images/luxry.png" alt="top-image" />
+        <div className="top-image" onMouseOver={handleOver}>
+          <img src={Carousel[controller].image} alt="top-image" />
         </div>
         <div className="heading-content">
           <div className="address">
@@ -51,10 +93,20 @@ export default function Header() {
             </div>
           </div>
           <div className="carousel">
-            <h2>WELCOME TO HOTEL DE BENTLY</h2>
+            <h2>{Carousel[controller].content}</h2>
             <div className="flexo">
-              <div></div> <p>HOTELS & BARS</p> <div></div>
+              <div></div> <p>{Carousel[controller].content2}</p> <div></div>
             </div>
+          </div>
+          <div
+            className="icon"
+            style={{ visibility: show ? "visible" : "hidden" }}
+          >
+            <FaArrowCircleLeft className="ikon" onClick={handleDecrease} />
+            <FaArrowCircleRight className="ikon" onClick={handleNext} />
+          </div>
+          <div className="date">
+            <Date />
           </div>
         </div>
       </div>

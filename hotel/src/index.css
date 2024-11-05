@@ -79,7 +79,8 @@ body {
 .carousel {
   position: absolute;
   top: 200px;
-  left: 200px;
+  left: 300px;
+  text-align: center;
 }
 .carousel h2 {
   color: white;
@@ -112,4 +113,118 @@ body {
   margin-right: 20px;
   font-size: 25px;
   font-weight: 500;
+}
+
+.icon {
+  position: absolute;
+  top: 350px;
+  display: flex;
+  justify-content: flex-start;
+  gap: 1100px;
+  align-items: flex-start;
+  align-content: center;
+  visibility: hidden;
+}
+.ikon {
+  font-size: 35px;
+  color: white;
+}
+
+.date-flex {
+  position: absolute;
+  top: 450px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: center;
+}
+.arrival-input {
+  background-color: white;
+  width: 250px;
+  padding: 20px 30px;
+  margin-right: 10px;
+}
+.arrival-flex {
+  display: flex;
+  align-items: flex-start;
+  align-content: center;
+  justify-content: flex-start;
+}
+
+.input-date input {
+  padding: 15px 5px;
+  width: 170px;
+  border: none;
+  font-size: 30px;
+  overflow: hidden;
+  margin-right: 2px;
+  color: gray;
+}
+.arrival-content {
+  font-size: 14px;
+  color: brown;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.input-date input:focus {
+  outline: none;
+}
+.calendar-icon {
+  font-size: 40px;
+  color: brown;
+}
+
+.showing-adult {
+  background-color: white;
+  padding: 3px 40px 12px 40px;
+  text-align: center;
+  margin-right: 10px;
+}
+
+.showing-adult h2 {
+  font-size: 15px;
+  color: brown;
+  margin-top: 20px;
+  font-weight: 500;
+}
+.showing-adult h5 {
+  font-size: 45px;
+  font-weight: 500;
+}
+
+.dropdown {
+  background-color: white;
+  margin-top: 5px;
+  box-shadow: 1px 1px 1px 1px brown;
+  text-align: center;
+  padding: 3px 0px;
+  margin-right: 5px;
+}
+.number {
+  font-size: 15px;
+}
+.number:hover {
+  background-color: brown;
+}
+
+.showing-adult {
+  background-color: white;
+  padding: 3px 40px 12px 40px;
+  text-align: center;
+  margin-right: 10px;
+}
+.showing-adult {
+  background-color: white;
+  padding: 3px 40px 12px 40px;
+  text-align: center;
+  margin-right: 10px;
+}
+
+.availabibilty {
+  background-color: brown;
+  color: white;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 56px 30px;
+  text-transform: uppercase;
 }
