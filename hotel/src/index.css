@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -227,4 +229,260 @@ body {
   font-weight: 500;
   padding: 56px 30px;
   text-transform: uppercase;
+}
+
+.roomss {
+  padding-top: 30px;
+  text-align: center;
+}
+
+.roomss h5 {
+  font-size: 45px;
+  font-weight: 500;
+  color: rgb(53, 28, 28);
+  padding-bottom: 4px;
+}
+
+.our-image img {
+  width: 170px;
+}
+
+.roomss p {
+  font-size: 18px;
+  text-align: center;
+  color: gray;
+  padding: 20px 350px;
+  font-weight: 300;
+}
+.image-apartment {
+  margin: 30px 40px;
+}
+.image-array {
+  position: relative;
+  box-shadow: 1px 1px 1px 1px lightgray;
+  width: 350px;
+}
+.cont-inside-image {
+  position: absolute;
+  top: 160px;
+  left: 50px;
+  color: white;
+  text-align: center;
+}
+.cont-inside-image h2 {
+  font-size: 25px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.reel-image img {
+  width: 350px;
+}
+/* .reel-image img:hover {
+  width: 360px;
+  transition: width 0.3s ease;
+} */
+.cont-inside-image p {
+  font-size: 15px;
+  font-weight: 600;
+}
+.information {
+  text-align: center;
+  padding: 10px 30px;
+}
+.information a {
+  font-size: 16px;
+  color: darkblue;
+  font-weight: 400;
+  text-align: center;
+  text-decoration: none;
+  font-family: "Kumbh Sans", sans-serif;
+  opacity: 0.5;
+}
+
+.font-icon {
+  font-size: 27px;
+  color: brown;
+}
+
+.bed-icon {
+  display: flex;
+  align-items: flex-start;
+  align-content: center;
+  justify-content: flex-start;
+  gap: 60px;
+  border-bottom: 1px solid gray;
+}
+.icons {
+  display: flex;
+  align-items: flex-start;
+  align-content: center;
+  justify-content: flex-start;
+  gap: 50px;
+  padding-top: 10px;
+}
+
+.ikkon {
+  font-size: 15px;
+  font-family: "Kumbh Sans", sans-serif;
+  font-weight: 500;
+  color: gray;
+  display: grid;
+  justify-content: center;
+  padding: 0px 40px;
+}
+
+.beed {
+  display: flex;
+  align-items: flex-start;
+  align-content: center;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}
+.wifi {
+  display: flex;
+  align-items: flex-start;
+  align-content: center;
+  justify-content: flex-start;
+  padding-bottom: 20px;
+}
+.food {
+  display: flex;
+  align-items: flex-start;
+  align-content: center;
+  justify-content: flex-start;
+}
+
+.arrow {
+  display: flex;
+  align-items: flex-start;
+  align-content: center;
+  justify-content: flex-start;
+}
+
+.room-price-flex {
+  display: flex;
+  align-items: flex-start;
+  align-content: center;
+  justify-content: space-between;
+  /* gap: 500px; */
+  width: 100%;
+}
+
+.remaining {
+  text-align: center;
+  margin-top: 80px;
+}
+.about h2 {
+  font-size: 45px;
+  font-weight: 500;
+  font-family: "Kumbh Sans", sans-serif;
+  border-bottom: 3px solid brown;
+  display: inline-block;
+}
+
+.p-content {
+  padding: 40px 80px;
+}
+.p-content p {
+  font-size: 19px;
+  font-family: "Kumbh Sans", sans-serif;
+  padding-bottom: 35px;
+  color: rgb(67, 53, 53);
+}
+
+.image-collapse {
+  display: flex;
+  align-self: center;
+  align-content: center;
+  justify-content: flex-start;
+  position: relative;
+  margin-left: 50px;
+}
+/* .first-image {
+  position: relative;
+} */
+
+.second-image {
+  position: absolute;
+  right: 90px;
+  top: 60px;
+}
+
+.first-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin-top: 200px;
+  gap: 30px;
+}
+
+.grid {
+  background-color: white;
+  box-shadow: 1px 1px 5px 0px gray;
+  text-align: center;
+  padding: 25px 20px;
+}
+.grid h5 {
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 530;
+  text-transform: uppercase;
+}
+
+.close-to-background {
+  background-image: url("images/bg-gallery.jpg");
+  height: 500px;
+  background-size: cover;
+  width: 100%;
+}
+
+.close-to-background {
+  padding: 60px 80px;
+}
+
+.gall {
+  text-align: center;
+}
+.gall h1 {
+  color: white;
+  font-size: 35px;
+  font-weight: 500;
+}
+.gallery-flex {
+  display: flex;
+  align-items: flex-start;
+  align-content: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.image-gallery img {
+  width: 240px;
+  transition: width 0.5s ease;
+}
+
+/* .image-gallery img:hover {
+  width: 250px;
+} */
+.image-gallery {
+  position: relative;
+}
+.plus-icon {
+  position: absolute;
+  top: 150px;
+  left: 430px;
+  animation: titilope 1s ease forwards;
+}
+
+@keyframes titilope {
+  from {
+    left: 10px;
+  }
+  to {
+    left: 100px;
+  }
+}
+
+.iccon {
+  font-size: 70px;
+  color: white;
 }

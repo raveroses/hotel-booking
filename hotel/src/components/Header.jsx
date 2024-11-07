@@ -3,8 +3,9 @@ import { FaPhoneAlt } from "react-icons/fa";
 import { FaArrowCircleRight } from "react-icons/fa";
 import { FaArrowCircleLeft } from "react-icons/fa";
 import { useEffect, useState } from "react";
+import HomeBody from "./HomeBody";
 import Date from "./Date";
-
+import ArrayPart from "./ArrayPart";
 export default function Header() {
   const [controller, setController] = useState(0);
   const [show, setShow] = useState(false);
@@ -108,6 +109,13 @@ export default function Header() {
           <div className="date">
             <Date />
           </div>
+        </div>
+        <div className="roomss">
+          <HomeBody />
+        </div>
+        <div className="image-apartment">
+          {" "}
+          <ArrayPart />
         </div>
       </div>
     </>
