@@ -469,9 +469,13 @@ body {
 .plus-icon {
   position: absolute;
   top: 150px;
-  left: 430px;
-  animation: titilope 1s ease forwards;
+  left: 10px;
+  z-index: 99;
+  /* animation: titilope 1s ease forwards; */
 }
+/* .plus-icon:hover {
+  color: red;
+} */
 
 @keyframes titilope {
   from {

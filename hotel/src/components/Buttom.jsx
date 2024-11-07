@@ -2,21 +2,22 @@ import { useState } from "react";
 import { CiCirclePlus } from "react-icons/ci";
 export default function Buttom() {
   const arrayImage = [
-    { image: "images/bently.jpg", id: 1 },
-    { image: "images/songle.jpg", id: 2 },
-    { image: "images/white-pillow.jpg", id: 3 },
-    { image: "images/tele.jpg", id: 4 },
+    { image: "images/bently.jpg", id: 0 },
+    { image: "images/songle.jpg", id: 1 },
+    { image: "images/white-pillow.jpg", id: 2 },
+    { image: "images/tele.jpg", id: 3 },
   ];
 
-  const [over, setOver] = useState(false);
+  const [over, setOver] = useState(null);
+  //   const [check, setCheck] = useState();
+  //   const array = arrayImage[check];
   const handleMouseOver = (id) => {
-    const compare = arrayImage.forEach((item) => {
-      if (item.id === id) {
-        setOver((prev) => !prev);
-      }
-    });
+    setOver(id);
   };
-
+  const handleMouseOut = () => {
+    setOver(null);
+  };
+  //   console.log(array);
   return (
     <>
       <div className="close-to-background">
@@ -32,11 +33,19 @@ export default function Buttom() {
                   src={item.image}
                   alt="image"
                   onMouseOver={() => handleMouseOver(item.id)}
-                  style={{ width: over ? "250px" : "" }}
+                  //   onMouseOut={handleMouseOut}
+                  style={{
+                    width: over === item.id ? "250px" : "240",
+                  }}
                 />
+
                 <div
                   className="plus-icon"
-                  //   style={{ visibility: over ? "visible" : "hidden" }}
+                  style={{
+                    visibility: over === item.id ? "visible" : "hidden",
+                    animation:
+                      over === item.id ? "titilope 1s ease forwards" : "none",
+                  }}
                 >
                   <CiCirclePlus className="iccon" />
                 </div>
