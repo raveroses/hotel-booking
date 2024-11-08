@@ -490,3 +490,25 @@ body {
   font-size: 70px;
   color: white;
 }
+
+.imagg img {
+  width: 650px;
+  height: 400px;
+}
+
+.modal-image {
+  background-color: rgb(26, 30, 30);
+  width: 700px;
+  height: 500px;
+  position: absolute;
+  top: 2700px;
+  left: 300px;
+  z-index: 100;
+  padding: 20px;
+}
+
+.cancel {
+  font-size: 25px;
+  color: white;
+  margin-left: 610px;
+}
