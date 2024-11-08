@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { CiCirclePlus } from "react-icons/ci";
 import { MdCancel } from "react-icons/md";
+import { PiCaretCircleLeftBold } from "react-icons/pi";
+import { PiCaretCircleRightBold } from "react-icons/pi";
 
 export default function Buttom() {
   const arrayImage = [
@@ -18,7 +20,7 @@ export default function Buttom() {
   ];
 
   const [over, setOver] = useState(null);
-  const [display, setDisplay] = useState(disImage[0].image); // Initial image set
+  const [display, setDisplay] = useState(disImage[0].image);
   const [show, setShow] = useState(false);
   const [controller, setController] = useState(0);
 
@@ -29,7 +31,7 @@ export default function Buttom() {
   const handleNext = () => {
     if (controller < disImage.length - 1) {
       setController(controller + 1);
-      setDisplay(disImage[controller + 1].image); // Directly set image
+      setDisplay(disImage[controller + 1].image);
     } else {
       setController(0);
       setDisplay(disImage[0].image);
@@ -39,7 +41,7 @@ export default function Buttom() {
   const handlePrev = () => {
     if (controller > 0) {
       setController((prev) => prev - 1);
-      setDisplay(disImage[controller - 1].image); // Directly set image
+      setDisplay(disImage[controller - 1].image);
     } else {
       setController(disImage.length - 1);
       setDisplay(disImage[disImage.length - 1].image);
@@ -49,7 +51,7 @@ export default function Buttom() {
   const handleDisplay = (id) => {
     const checking = disImage.find((items) => {
       if (items.id === id) {
-        setDisplay(items.image); // Keep item as the source for display
+        setDisplay(items.image);
         setShow((prev) => !prev);
       }
     });
@@ -100,9 +102,19 @@ export default function Buttom() {
             <img src={display} alt="" />
           </div>
           <div className="button">
-            <button onClick={handlePrev}> PREV</button>{" "}
-            <button onClick={handleNext}> NEXT</button>
+            <PiCaretCircleLeftBold onClick={handlePrev} className="next" />
+            <div className="length">{`${controller + 1} out of ${
+              disImage.length
+            }`}</div>
+            <PiCaretCircleRightBold onClick={handleNext} className="next" />
           </div>
+        </div>
+        <div
+          className="overlay"
+          style={{ display: show ? "block" : "none" }}
+        ></div>
+        <div className="view">
+          <a href="#">View More</a>
         </div>
       </div>
     </>

@@ -430,7 +430,7 @@ body {
 
 .close-to-background {
   background-image: url("images/bg-gallery.jpg");
-  height: 500px;
+  height: 600px;
   background-size: cover;
   width: 100%;
 }
@@ -470,7 +470,7 @@ body {
   position: absolute;
   top: 150px;
   left: 10px;
-  z-index: 99;
+  z-index: 9;
   /* animation: titilope 1s ease forwards; */
 }
 /* .plus-icon:hover {
@@ -501,9 +501,9 @@ body {
   width: 700px;
   height: 500px;
   position: absolute;
-  top: 2700px;
+  top: 2780px;
   left: 300px;
-  z-index: 100;
+  z-index: 50;
   padding: 20px;
 }
 
@@ -511,4 +511,126 @@ body {
   font-size: 25px;
   color: white;
   margin-left: 610px;
+}
+
+.button {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: flex-start;
+}
+.next {
+  font-size: 25px;
+  color: white;
+}
+
+.length {
+  font-size: 13px;
+  color: white;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(1px);
+  z-index: 4;
+}
+
+.view {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin-top: 30px;
+  padding-bottom: 50px;
+}
+
+.view a {
+  padding: 6px 45px;
+  color: white;
+  border: 2px solid white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 15px;
+  font-family: "Kumbh Sans", sans-serif;
+  font-weight: 600;
+}
+
+footer {
+  background-color: rgb(37, 36, 36);
+  padding: 70px 40px 35px 40px;
+}
+
+.firstlayer-flex {
+  display: flex;
+  align-items: flex-start;
+  align-content: center;
+  justify-content: flex-start;
+  gap: 320px;
+  border-bottom: 0.5px solid gray;
+  /* padding-bottom: 15px; */
+}
+.anchor-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: flex-start;
+  /* gap: 150px; */
+}
+
+.anchor-grid a {
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+  font-family: "Kumbh Sans", sans-serif;
+  margin-bottom: 16px;
+  margin-right: 100px;
+}
+
+.secondLayer {
+  color: white;
+  font-size: 13px;
+}
+.secondLayer span {
+  color: rgb(108, 93, 8);
+}
+
+.payment {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: center;
+  gap: 30px;
+}
+.payment img {
+  width: 70px;
+}
+.second-layer-flex {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: center;
+  gap: 350px;
+  margin-top: 30px;
+}
+
+.sticky {
+  background-color: black;
+  width: 100%;
+  height: 100px;
+  position: fixed;
+  z-index: 60; /* Sticky bar */
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center;
+  padding: 40px 40px;
+  gap: 420px;
+  opacity: 0.9;
 }

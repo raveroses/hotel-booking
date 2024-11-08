@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import HomeBody from "./HomeBody";
 import Date from "./Date";
 import ArrayPart from "./ArrayPart";
+// import Sticky from "./Sticky";
 export default function Header() {
   const [controller, setController] = useState(0);
   const [show, setShow] = useState(false);
@@ -56,6 +57,24 @@ export default function Header() {
       }
     });
   };
+
+  const [check, setChecker] = useState(false);
+
+  const handleScroll = () => {
+    if (window.scrollY > 30) {
+      setChecker(true);
+    } else {
+      setChecker(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <>
       <div className="heading">
@@ -69,7 +88,7 @@ export default function Header() {
             +2348067595321
           </div>
           {/* <hr className="line" /> */}
-          <div className="logo-part">
+          <div className={check ? "sticky" : "logo-part"}>
             <div className="logo">
               <img src="/images/logo.png" alt="logo" />
             </div>

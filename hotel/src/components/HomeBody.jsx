@@ -4,7 +4,7 @@ export default function HomeBody() {
       <div className="our">
         <h5>Our Rooms</h5>
         <div className="our-image">
-          <img src="/images/icon-our.png" alt="icon" />
+          <img src="/images/our.png" alt="icon" />
         </div>
         <p>
           We are uncompromisingly committed to quality and excellence and this
