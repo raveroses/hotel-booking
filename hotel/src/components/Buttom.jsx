@@ -85,7 +85,8 @@ export default function Buttom() {
                 alt="image"
                 onMouseOver={() => handleMouseOver(item.id)}
                 style={{
-                  width: over === item.id ? "410px" : "400px",
+                  width: over === item.id ? "390px" : "380px",
+                  maxWidth: "100%",
                 }}
                 className="me"
               />

@@ -34,16 +34,8 @@ export default function Footer() {
           </p>
           <div className="payment">
             <img src="/images/paypal.png" alt="paypal" />
-            <img
-              src="/images/Master-card.png"
-              alt="paypal"
-              style={{ width: "40px" }}
-            />
-            <img
-              src="/images/Visa.png"
-              alt="paypal"
-              style={{ width: "40px" }}
-            />
+            <img src="/images/Master-card.png" alt="paypal" className="cl" />
+            <img src="/images/Visa.png" alt="paypal" className="cl" />
             <img src="/images/Discover.png" alt="paypal" />
           </div>
         </div>

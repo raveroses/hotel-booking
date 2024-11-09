@@ -470,7 +470,7 @@ body {
 .plus-icon {
   position: absolute;
   top: 150px;
-  left: 10px;
+  left: 0px;
   z-index: 9;
   /* animation: titilope 1s ease forwards; */
 }
@@ -644,9 +644,15 @@ footer {
 .burger {
   display: none;
 }
-/* .logo-parts {
+.logo-parts {
   display: none;
-} */
+}
+.stickys {
+  display: none;
+}
+.cl {
+  width: 40px;
+}
 @media (max-width: 480px) {
   .stickys {
     justify-content: flex-start;
@@ -821,25 +827,27 @@ footer {
     width: 100%;
     max-width: 100%;
     padding: 13px 0px;
+    justify-content: center;
+    align-items: center;
   }
   .arrival-input {
-    width: 458px;
+    width: 350px;
     padding: 11px 13px;
-    margin: 8px;
+    margin: 5px auto;
   }
   .arrival-content {
     font-size: 14px;
   }
   .input-date input {
     padding: 15px 89px 15px 0px;
-    width: 100%;
+    width: 300px;
     font-size: 20px;
     text-transform: uppercase;
   }
   .showing-adult {
     padding: 0px;
-    width: 455px;
-    margin: 4px 10px;
+    width: 350px;
+    margin: 5px auto;
   }
   .showing-adult h2 {
     margin-top: 0px;
@@ -864,9 +872,9 @@ footer {
 
   .availabibilty {
     padding: 19px 36px;
-    width: 456px;
+    width: 350px;
     text-align: center;
-    margin: 4px 10px;
+    margin: 5px auto;
   }
   .room-price-flex-media {
     display: flex;
@@ -1010,6 +1018,7 @@ footer {
   .firstlayer-flex img {
     margin: auto;
     margin-bottom: 67px;
+    max-width: 100%;
   }
   .me {
     display: block;
@@ -1020,7 +1029,7 @@ footer {
 
   footer {
     background-color: rgb(37, 36, 36);
-    padding: 40px 40px 35px 40px;
+    padding: 40px 10px 35px 10px;
   }
   .anchor-grid {
     display: grid;
@@ -1030,6 +1039,9 @@ footer {
     align-items: center;
     gap: 0px;
   }
+  .anchor-grid a {
+    font-size: 11px;
+  }
   .second-layer-flex {
     display: flex;
     justify-content: flex-start;
@@ -1038,6 +1050,10 @@ footer {
     gap: 0px;
     margin-top: 30px;
     flex-direction: column;
+  }
+  .second-layer-flex p {
+    font-size: 10px;
+    padding: 0px 10px;
   }
   .remaining {
     text-align: center;
@@ -1049,5 +1065,14 @@ footer {
   }
   .p-content p {
     font-size: 15px;
+  }
+  .payment {
+    margin: auto;
+  }
+  .payment img {
+    width: 30px;
+  }
+  .cl {
+    width: 30px;
   }
 }
