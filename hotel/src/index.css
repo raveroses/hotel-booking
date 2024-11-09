@@ -705,7 +705,7 @@ footer {
     justify-content: flex-start;
     max-width: 100%;
     width: 100%;
-    gap: 230px;
+    gap: 210px;
   }
   /* 
   .logo-parts ul li a {
@@ -786,30 +786,36 @@ footer {
 
   .carousel {
     top: 330px;
-    left: 30px;
+    left: 46px;
     text-align: center;
     max-width: 100%;
   }
 
   .carousel h2 {
-    font-size: 28px;
+    font-size: 25px;
     font-weight: 500;
     text-align: center;
+  }
+
+  .carousel .flexo {
+    font-size: 0px;
+    margin-top: 5px;
   }
   .carousel .flexo div {
     width: 31px;
     height: 1px;
+    margin-top: 9px;
   }
 
   .carousel .flexo p {
     margin-left: 15px;
     margin-right: 16px;
-    font-size: 15px;
+    font-size: 13px;
   }
   .icon {
-    top: 352px;
+    top: 353px;
     gap: 250px;
-    left: 30px;
+    left: 42px;
     max-width: 100%;
   }
   .ikon {
@@ -818,19 +824,27 @@ footer {
 
   .date-flex {
     flex-direction: column;
-    top: 599px;
+    top: 600px;
     left: 0px;
     background-color: rgb(40, 35, 35);
     width: 100%;
     max-width: 100%;
-    padding: 13px 0px;
+    padding: 13px 10px;
     justify-content: center;
     align-items: center;
   }
   .arrival-input {
-    width: 350px;
-    padding: 11px 13px;
+    width: 320px;
+    padding: 7px 7px;
     margin: 5px auto;
+  }
+  .arrival-flex {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 100%;
   }
   .arrival-content {
     font-size: 14px;
@@ -843,8 +857,8 @@ footer {
   }
   .showing-adult {
     padding: 0px;
-    width: 350px;
-    margin: 5px auto;
+    width: 320px;
+    margin: 7px auto;
   }
   .showing-adult h2 {
     margin-top: 0px;
@@ -855,13 +869,17 @@ footer {
     width: 300px;
   }
   .roomss {
-    margin-top: 597px;
-    padding: 86px 10px;
+    margin-top: 599px;
+    padding: 75px 7px;
+  }
+  .our-image img {
+    width: 170px;
+    max-width: 100%;
   }
   .roomss p {
     padding: 22px 15px;
     font-weight: 300;
-    font-size: 17px;
+    font-size: 15px;
   }
   .date {
     margin: 0px;
@@ -869,7 +887,7 @@ footer {
 
   .availabibilty {
     padding: 19px 36px;
-    width: 350px;
+    width: 320px;
     text-align: center;
     margin: 5px auto;
   }
@@ -888,7 +906,7 @@ footer {
   }
 
   .image-apartment {
-    margin: 10px 20px;
+    margin: 10px 10px;
   }
   .second-image img {
     width: 390px;
@@ -929,7 +947,7 @@ footer {
   }
   .cont-inside-image {
     top: 163px;
-    left: 118px;
+    left: 47px;
     text-align: center;
   }
   .ikkon {
@@ -943,7 +961,11 @@ footer {
   }
   .beed {
     margin-bottom: 20px;
-    padding-left: 106px;
+    padding-left: 74px;
+  }
+  .icons {
+    margin-bottom: 20px;
+    padding-left: 74px;
   }
   .beed p {
     font-size: 10px;
@@ -956,11 +978,6 @@ footer {
   .arrow p {
     font-size: 10px;
     line-height: 30px;
-  }
-
-  .icons {
-    margin-bottom: 20px;
-    padding-left: 106px;
   }
 
   .wifi {
@@ -982,12 +999,25 @@ footer {
   }
   .close-to-background {
     width: 100%;
-    height: 2400px;
+    height: 2500px;
     max-width: 100%;
     padding: 62px 20px;
     background-image: url("images/bg-gallery.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
   }
-
+  .modal-image {
+    background-color: rgb(26, 30, 30);
+    width: 204px;
+    height: 200px;
+    position: absolute;
+    top: 100px;
+    left: 20px;
+    z-index: 50;
+    padding: 5px;
+  }
   .gallery-flex {
     flex-direction: column;
     max-width: 100%;
@@ -995,6 +1025,7 @@ footer {
   .imagg img {
     width: 180px;
     height: 60px;
+    display: none;
   }
   .button {
     display: flex;
@@ -1033,12 +1064,18 @@ footer {
     display: grid;
     grid-template-columns: 1fr 1fr;
     justify-content: flex-start;
-    align-content: center;
-    align-items: center;
+    align-content: flex-start;
+    align-items: flex-start;
     gap: 0px;
+    padding: 0px 10px;
   }
   .anchor-grid a {
+    color: white;
+    text-decoration: none;
     font-size: 11px;
+    font-family: "Kumbh Sans", sans-serif;
+    margin-bottom: 16px;
+    margin-right: 48px;
   }
   .second-layer-flex {
     display: flex;
