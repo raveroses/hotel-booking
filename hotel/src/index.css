@@ -367,6 +367,9 @@ body {
   /* gap: 500px; */
   width: 100%;
 }
+.room-price-flex-media {
+  display: none;
+}
 
 .remaining {
   text-align: center;
@@ -433,9 +436,6 @@ body {
   height: 600px;
   background-size: cover;
   width: 100%;
-}
-
-.close-to-background {
   padding: 60px 80px;
 }
 
@@ -473,9 +473,10 @@ body {
   z-index: 9;
   /* animation: titilope 1s ease forwards; */
 }
-/* .plus-icon:hover {
-  color: red;
-} */
+.please {
+  display: none;
+  /* animation: titilope 1s ease forwards; */
+}
 
 @keyframes titilope {
   from {
@@ -633,4 +634,343 @@ footer {
   padding: 40px 40px;
   gap: 420px;
   opacity: 0.9;
+}
+.me {
+  display: none;
+}
+
+.burger {
+  display: none;
+}
+@media (max-width: 480px) {
+  .please {
+    position: absolute;
+    top: 150px;
+    left: 10px;
+    z-index: 9;
+    display: block;
+    /* animation: titilope 1s ease forwards; */
+  }
+  @keyframes titilope {
+    from {
+      left: 10px;
+    }
+    to {
+      left: 200px;
+    }
+  }
+
+  .plus-icon {
+    display: none;
+  }
+  .top-image img {
+    height: 600px;
+    max-width: 100%;
+    object-fit: cover;
+    object-position: left;
+  }
+  .burger {
+    display: block;
+    color: white;
+    font-size: 30px;
+  }
+  .address {
+    display: none;
+  }
+  .logo img {
+    width: 85px;
+  }
+  .navbar ul li {
+    float: none;
+    margin-right: 0px;
+  }
+  .navbar ul {
+    position: absolute;
+    left: 0;
+    top: 130px;
+    background-color: red;
+    /* display: block; */
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+  }
+  .heading-content {
+    padding: 0px 30px;
+  }
+  .logo-part {
+    gap: 300px;
+    top: 0px;
+    border-top: none;
+    padding-top: 28px;
+  }
+  .navbar ul li a {
+    font-size: 11px;
+    font-weight: 400;
+  }
+  .carousel {
+    top: 330px;
+    left: 64px;
+    text-align: center;
+  }
+
+  .carousel h2 {
+    font-size: 30px;
+    font-weight: 550;
+    text-align: left;
+  }
+  .carousel .flexo div {
+    width: 31px;
+    height: 1px;
+  }
+
+  .carousel .flexo p {
+    margin-left: 16px;
+    margin-right: 16px;
+    font-size: 15px;
+  }
+  .icon {
+    top: 342px;
+    gap: 370px;
+  }
+  .ikon {
+    font-size: 30px;
+  }
+
+  .date-flex {
+    flex-direction: column;
+    top: 599px;
+    left: 0px;
+    background-color: rgb(40, 35, 35);
+    width: 100%;
+    max-width: 100%;
+    padding: 13px 0px;
+  }
+  .arrival-input {
+    width: 458px;
+    padding: 11px 13px;
+    margin: 8px;
+  }
+  .arrival-content {
+    font-size: 14px;
+  }
+  .input-date input {
+    padding: 15px 89px 15px 0px;
+    width: 100%;
+    font-size: 20px;
+    text-transform: uppercase;
+  }
+  .showing-adult {
+    padding: 0px;
+    width: 455px;
+    margin: 4px 10px;
+  }
+  .showing-adult h2 {
+    margin-top: 0px;
+  }
+  .dropdown {
+    padding: 7px 0px;
+    margin: auto;
+    width: 300px;
+  }
+  .roomss {
+    margin-top: 597px;
+    padding: 86px 10px;
+  }
+  .roomss p {
+    padding: 22px 15px;
+    font-weight: 300;
+    font-size: 17px;
+  }
+  .date {
+    margin: 0px;
+  }
+
+  .availabibilty {
+    padding: 19px 36px;
+    width: 456px;
+    text-align: center;
+    margin: 4px 10px;
+  }
+  .room-price-flex-media {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    gap: 0px;
+    width: 100%;
+    visibility: visible;
+    max-width: 100%;
+  }
+  .room-price-flex {
+    display: none;
+  }
+
+  .image-apartment {
+    margin: 10px 20px;
+  }
+  .second-image img {
+    width: 390px;
+    max-width: 100%;
+  }
+  .first-image img {
+    width: 390px;
+    max-width: 100%;
+  }
+  .second-image {
+    position: static;
+  }
+  .image-collapse {
+    flex-direction: column;
+    display: flex;
+    align-self: center;
+    align-content: center;
+    justify-content: center;
+    position: relative;
+    margin-left: 0px;
+  }
+  .first-image {
+    margin: auto;
+  }
+  .second-image {
+    margin: auto;
+  }
+  .image-array {
+    width: 100%;
+    border: 1px solid red;
+    max-width: 100%;
+  }
+  .reel-image img {
+    width: 439px;
+  }
+  .information a {
+    font-size: 14px;
+  }
+  .cont-inside-image {
+    top: 163px;
+    left: 118px;
+    text-align: center;
+  }
+  .ikkon {
+    font-size: 15px;
+    font-family: "Kumbh Sans", sans-serif;
+    font-weight: 500;
+    color: gray;
+    display: grid;
+    justify-content: flex-start;
+    padding: 0px 0px;
+  }
+  .beed {
+    margin-bottom: 20px;
+    padding-left: 106px;
+  }
+  .beed p {
+    font-size: 10px;
+    line-height: 30px;
+  }
+  .arrow {
+    margin-bottom: 20px;
+  }
+
+  .arrow p {
+    font-size: 10px;
+    line-height: 30px;
+  }
+
+  .icons {
+    margin-bottom: 20px;
+    padding-left: 106px;
+  }
+
+  .wifi {
+    font-size: 10px;
+    line-height: 30px;
+  }
+  .food {
+    margin-bottom: 20px;
+  }
+
+  .food p {
+    font-size: 10px;
+    line-height: 30px;
+  }
+  .first-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-top: 71px;
+  }
+  .close-to-background {
+    width: 100%;
+    height: 2400px;
+    max-width: 100%;
+    padding: 62px 20px;
+  }
+
+  .gallery-flex {
+    flex-direction: column;
+    max-width: 100%;
+  }
+  .imagg img {
+    width: 180px;
+    height: 60px;
+  }
+  .button {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: flex-start;
+    gap: 0px;
+  }
+  .firstlayer-flex {
+    display: flex;
+    align-items: flex-start;
+    align-content: center;
+    justify-content: flex-start;
+    gap: 0px;
+    border-bottom: 0.5px solid gray;
+    /* padding-bottom: 15px; */
+    flex-direction: column;
+  }
+  .firstlayer-flex img {
+    margin: auto;
+    margin-bottom: 67px;
+  }
+  .me {
+    display: block;
+  }
+  .you {
+    display: none;
+  }
+
+  footer {
+    background-color: rgb(37, 36, 36);
+    padding: 40px 40px 35px 40px;
+  }
+  .anchor-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: flex-start;
+    align-content: center;
+    align-items: center;
+    gap: 0px;
+  }
+  .second-layer-flex {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: center;
+    gap: 0px;
+    margin-top: 30px;
+    flex-direction: column;
+  }
+  .remaining {
+    text-align: center;
+    margin-top: 11px;
+  }
+  .p-content {
+    padding: 41px 5px;
+    text-align: center;
+  }
+  .p-content p {
+    font-size: 15px;
+  }
 }

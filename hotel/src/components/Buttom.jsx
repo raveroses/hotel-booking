@@ -78,9 +78,32 @@ export default function Buttom() {
                 style={{
                   width: over === item.id ? "250px" : "240px",
                 }}
+                className="you"
               />
+              <img
+                src={item.image}
+                alt="image"
+                onMouseOver={() => handleMouseOver(item.id)}
+                style={{
+                  width: over === item.id ? "410px" : "400px",
+                }}
+                className="me"
+              />
+
               <div
                 className="plus-icon"
+                style={{
+                  visibility: over === item.id ? "visible" : "hidden",
+                  animation:
+                    over === item.id ? "titilope 1s ease forwards" : "none",
+                }}
+                onClick={() => handleDisplay(item.id)}
+              >
+                <CiCirclePlus className="iccon" />
+              </div>
+
+              <div
+                className="please"
                 style={{
                   visibility: over === item.id ? "visible" : "hidden",
                   animation:

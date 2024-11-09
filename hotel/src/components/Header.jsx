@@ -3,6 +3,7 @@ import { FaPhoneAlt } from "react-icons/fa";
 import { FaArrowCircleRight } from "react-icons/fa";
 import { FaArrowCircleLeft } from "react-icons/fa";
 import { useEffect, useState } from "react";
+import { GiHamburgerMenu } from "react-icons/gi";
 import HomeBody from "./HomeBody";
 import Date from "./Date";
 import ArrayPart from "./ArrayPart";
@@ -93,6 +94,7 @@ export default function Header() {
               <img src="/images/logo.png" alt="logo" />
             </div>
             <div className="navbar">
+              <GiHamburgerMenu className="burger" />
               <ul>
                 <li>
                   <a href=""> Home</a>

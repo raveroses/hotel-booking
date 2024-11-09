@@ -106,6 +106,60 @@ export default function ArrayPart() {
           })}
         </Swiper>
       </div>
+      <div className="room-price-flex-media">
+        <Swiper
+          modules={[Navigation, Pagination, Autoplay]}
+          spaceBetween={30}
+          slidesPerView={1}
+          autoplay={{ delay: 3000 }}
+          loop
+        >
+          {slidesData?.map((item, index) => {
+            return (
+              <SwiperSlide key={index}>
+                <div className="image-array">
+                  <div className="reel-image">
+                    <img
+                      src={item.image}
+                      alt={`${index}-image-apartment`}
+                      style={{ height: item.height && item.height }}
+                    />
+                  </div>
+                  <div className="cont-inside-image">
+                    <h2>{item.hkn}</h2>
+                    <p>{item.price}</p>
+                  </div>
+                  <div className="information">
+                    <a href="#">{item.content}</a>
+                  </div>
+                  <div className="ikkon">
+                    <div className="bed-icon">
+                      <div className="beed">
+                        <LiaBedSolid className="font-icon" />
+                        <p> KingSize Bed</p>
+                      </div>
+                      <div className="arrow">
+                        <HiMiniArrowsPointingOut className="font-icon" />
+                        <p>45m2</p>
+                      </div>
+                    </div>
+                    <div className="icons">
+                      <div className="wifi">
+                        <IoWifiOutline className="font-icon" />
+                        <p> WiFi Access</p>
+                      </div>
+                      <div className="food">
+                        <IoFastFoodOutline className="font-icon" />{" "}
+                        <p>Breakfast</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </SwiperSlide>
+            );
+          })}
+        </Swiper>
+      </div>
       <div className="remaining">
         <div className="about">
           <h2>About Us</h2>

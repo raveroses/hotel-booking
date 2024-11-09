@@ -76,7 +76,7 @@ export default function Date() {
           </div>
           <div
             className="dropdown"
-            style={{ visibility: show ? "visible" : "hidden" }}
+            style={{ display: show ? "block" : "none" }}
           >
             {numberArray?.map((item, index) => {
               return (
@@ -98,7 +98,7 @@ export default function Date() {
           </div>
           <div
             className="dropdown"
-            style={{ visibility: shows ? "visible" : "hidden" }}
+            style={{ display: shows ? "block" : "none" }}
           >
             {numberArray?.map((item, index) => {
               return (
@@ -120,7 +120,7 @@ export default function Date() {
           </div>
           <div
             className="dropdown"
-            style={{ visibility: showss ? "visible" : "hidden" }}
+            style={{ display: showss ? "block" : "none" }}
           >
             {numberArray?.map((item, index) => {
               return (
