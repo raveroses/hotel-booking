@@ -461,9 +461,6 @@ body {
   transition: width 0.5s ease;
 }
 
-/* .image-gallery img:hover {
-  width: 250px;
-} */
 .image-gallery {
   position: relative;
 }
@@ -988,6 +985,7 @@ footer {
     height: 2400px;
     max-width: 100%;
     padding: 62px 20px;
+    background-image: url("images/bg-gallery.jpg");
   }
 
   .gallery-flex {
@@ -1074,5 +1072,14 @@ footer {
   }
   .cl {
     width: 30px;
+  }
+
+  .gall {
+    text-align: center;
+  }
+  .gall h1 {
+    color: white;
+    font-size: 35px;
+    font-weight: 500;
   }
 }
