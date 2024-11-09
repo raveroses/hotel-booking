@@ -4,12 +4,23 @@ import { FaArrowCircleRight } from "react-icons/fa";
 import { FaArrowCircleLeft } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { FaTimes } from "react-icons/fa";
 import HomeBody from "./HomeBody";
 import Date from "./Date";
 import ArrayPart from "./ArrayPart";
 // import Sticky from "./Sticky";
 export default function Header() {
   const [controller, setController] = useState(0);
+  const [burger, setBurger] = useState(false);
+
+  const handleBurger = () => {
+    setBurger((prev) => !prev);
+  };
+
+  const handleCancel = () => {
+    setBurger(false);
+  };
+
   const [show, setShow] = useState(false);
   const handleOver = () => {
     setShow((prev) => !prev);
@@ -96,6 +107,41 @@ export default function Header() {
             <div className="navbar">
               <GiHamburgerMenu className="burger" />
               <ul>
+                <li>
+                  <a href=""> Home</a>
+                </li>
+                <li>
+                  <a href="">Rooms & Rate</a>
+                </li>
+                <li>
+                  <a href="">Car Hire</a>
+                </li>
+                <li>
+                  <a href="">Halls</a>
+                </li>
+                <li>
+                  <a href="">Contact Us</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div className={check ? "stickys" : "logo-parts"}>
+            <div className="logo">
+              <img src="/images/logo.png" alt="logo" />
+            </div>
+            <div className="navbar">
+              <GiHamburgerMenu
+                className="burger"
+                style={{ display: burger ? "none" : "block" }}
+                onClick={handleBurger}
+              />
+              <FaTimes
+                className="burger"
+                style={{ display: burger ? "block" : "none" }}
+                onClick={handleCancel}
+              />
+              <ul style={{ display: burger ? "block" : "none" }}>
                 <li>
                   <a href=""> Home</a>
                 </li>
