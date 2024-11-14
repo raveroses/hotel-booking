@@ -9,7 +9,23 @@ import HomeBody from "./HomeBody";
 import Date from "./Date";
 import ArrayPart from "./ArrayPart";
 // import Sticky from "./Sticky";
-export default function Header() {
+export default function Header({
+  show,
+  shows,
+  showss,
+  number,
+  numbers,
+  numberss,
+  handleOnchange,
+  handleShow,
+  handleShows,
+  handleShowss,
+  dateChecker,
+  numberArray,
+  handleDropDownEffect,
+  handleDropDownEffects,
+  handleDropDownEffectss,
+}) {
   const [controller, setController] = useState(0);
   const [burger, setBurger] = useState(false);
 
@@ -21,9 +37,9 @@ export default function Header() {
     setBurger(false);
   };
 
-  const [show, setShow] = useState(false);
+  const [showp, setShowp] = useState(false);
   const handleOver = () => {
-    setShow((prev) => !prev);
+    setShowp((prev) => !prev);
   };
   const Carousel = [
     {
@@ -168,13 +184,29 @@ export default function Header() {
           </div>
           <div
             className="icon"
-            style={{ visibility: show ? "visible" : "hidden" }}
+            style={{ visibility: showp ? "visible" : "hidden" }}
           >
             <FaArrowCircleLeft className="ikon" onClick={handleDecrease} />
             <FaArrowCircleRight className="ikon" onClick={handleNext} />
           </div>
           <div className="date">
-            <Date />
+            <Date
+              show={show}
+              shows={shows}
+              showss={showss}
+              number={number}
+              numbers={numbers}
+              numberss={numberss}
+              handleOnchange={handleOnchange}
+              handleShow={handleShow}
+              handleShows={handleShows}
+              handleShowss={handleShowss}
+              dateChecker={dateChecker} // <-- make sure this is defined
+              numberArray={numberArray}
+              handleDropDownEffect={handleDropDownEffect}
+              handleDropDownEffects={handleDropDownEffects}
+              handleDropDownEffectss={handleDropDownEffectss}
+            />
           </div>
         </div>
         <div className="roomss">
