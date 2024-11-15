@@ -42,7 +42,7 @@ const BookingArray = [
     content:
       "Standard has the following facilities, Sizable bed 6X6, bedsides, drawers, reading table, reading chair, plasma television, air-conditioned, two single sitters with center table, shoe rack, and good wardroom, etc",
     image: "images/fifth-apartment.jpg",
-    price: "₦38,400 ",
+    price: "38,400 ",
   },
 ];
 

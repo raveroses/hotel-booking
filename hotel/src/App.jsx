@@ -59,7 +59,6 @@ function App() {
     departure: "",
   });
 
-  console.log(dateChecker);
   const handleOnchange = (event) => {
     const { value, name } = event.target;
     setDateChecker((prev) => ({
