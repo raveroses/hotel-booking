@@ -723,7 +723,7 @@ footer {
   padding-top: 40px;
   border-bottom: 3px solid red;
   display: inline-block;
-  /* margin-left: 550px; */
+  margin-left: 500px;
   padding-bottom: 10px;
 }
 
@@ -735,11 +735,21 @@ footer {
   margin-bottom: 30px;
 }
 
+.props-pass {
+  display: flex;
+  align-items: flex-start;
+  align-content: center;
+  gap: 80px;
+  margin-top: 60px;
+}
 .select {
-  width: 300px;
+  width: 75%;
+}
+.imaginary-content {
+  width: 70%;
 }
 .selec-room {
-  background-color: red;
+  background-color: lightgray;
   text-transform: uppercase;
   text-align: center;
   padding: 13px;
@@ -748,6 +758,89 @@ footer {
 }
 
 .second {
-  background-color: gray;
+  background-color: rgb(102, 91, 27);
   padding: 17px;
+  color: white;
+}
+
+.booking {
+  padding-bottom: 30px;
+}
+.booking p {
+  padding-top: 13px;
+}
+.booking2 h5 {
+  padding-bottom: 20px;
+}
+.booking h5 {
+  font-size: 13px;
+  font-weight: 700;
+  word-spacing: 5px;
+}
+.booking p {
+  font-size: 13px;
+  font-weight: 500;
+}
+.booking2 h5 {
+  font-size: 13px;
+  font-weight: 700;
+  word-spacing: 5px;
+}
+
+.imaging img {
+  width: 380px;
+  border-radius: 15px;
+}
+
+.imaginary-display {
+  display: flex;
+  align-items: flex-start;
+  align-content: center;
+  gap: 30px;
+}
+.liist {
+  margin-bottom: 30px;
+}
+
+.liist h5 {
+  font-size: 25px;
+  font-weight: 700;
+  padding-bottom: 15px;
+}
+
+.imaginary-content p {
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.prii {
+  padding-top: 30px;
+  display: flex;
+  align-items: flex-start;
+  align-content: center;
+  gap: 20px;
+}
+
+.priii h4 {
+  font-size: 23px;
+}
+
+.prii span {
+  font-size: 17px;
+  color: gray;
+}
+
+.bookingg {
+  border: 2px solid black;
+  text-align: center;
+  padding: 10px 20px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.bookingg:hover {
+  border: none;
+  background-color: rgb(82, 72, 15);
+  color: white;
 }

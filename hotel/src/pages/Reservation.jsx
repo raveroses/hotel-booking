@@ -1,12 +1,9 @@
 import { FaPhoneAlt } from "react-icons/fa";
 import { CiLocationOn } from "react-icons/ci";
+import { FaCaretRight } from "react-icons/fa";
+import BookingArray from "../components/BookingArray";
 export default function Reservation({ newArry }) {
-  const arr = [newArry];
-
-  const map = arr.map((item) => {
-    console.log(item.arrival);
-  });
-
+  console.log(newArry);
   return (
     <>
       <div className="heading-hero">
@@ -56,22 +53,58 @@ export default function Reservation({ newArry }) {
             <div className="selec-room">Select Rooms</div>
             <div className="second">
               <div className="booking">
-                <h5>YOU ARE BOOKING</h5>
-                <p> 1 Adult, 0 Child, 1 Rooms</p>
-              </div>
-              <div className="booking2">
-                <h5> YOUR STAY DATES</h5>
-                <p>
-                  Arrival: <span>12-11-2024</span>{" "}
-                </p>
+                <h5>
+                  <FaCaretRight />
+                  YOU ARE BOOKING
+                </h5>
                 <p>
                   {" "}
-                  Departure: <span>13-11-2024</span>
+                  {newArry.number}Adult, {newArry.numbers} Child,{" "}
+                  {newArry.numberss} Rooms
+                </p>
+              </div>
+              <div className="booking2">
+                <h5>
+                  <FaCaretRight />
+                  YOUR STAY DATES
+                </h5>
+                <p>
+                  Arrival: <span>{newArry.arrival}</span>{" "}
+                </p>
+                <p>
+                  Departure: <span>{newArry.departure}</span>
                 </p>
               </div>
             </div>
           </div>
-          <div className="hotel-image"></div>
+          <div className="hotel-image">
+            {BookingArray?.map((item, index) => {
+              return (
+                <div className="liist" key={index}>
+                  <h5>{item.hkn}</h5>
+                  <div className="imaginary-display">
+                    <div className="imaging">
+                      <img src={item.image} alt={`${index}image`} />
+                    </div>
+
+                    <div className="imaginary-content">
+                      <p>{item.content}</p>
+                      <div className="prii">
+                        <div className="priii">
+                          {" "}
+                          <h4>
+                            ₦{item.price}
+                            <span>/night</span>
+                          </h4>
+                        </div>
+                        <button className="bookingg">BOOK ROOM</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </>

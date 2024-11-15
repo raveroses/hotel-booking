@@ -17,8 +17,8 @@ function App() {
   const [show, setShow] = useState(false);
   const [shows, setShows] = useState(false);
   const [showss, setShowss] = useState(false);
-  const [number, setNumber] = useState(0);
-  const [numbers, setNumbers] = useState(0);
+  const [number, setNumber] = useState(1);
+  const [numbers, setNumbers] = useState(1);
   const [numberss, setNumberss] = useState(0);
 
   const handleShow = () => {

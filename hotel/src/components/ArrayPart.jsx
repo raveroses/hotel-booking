@@ -8,49 +8,9 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import slidesData from "./slidesData";
 
 export default function ArrayPart() {
-  const slidesData = [
-    {
-      hkn: "2 BEDROOM APART",
-      price: "200,000 / PER NIGHT",
-      content:
-        "2 Bedroom Apt. has the following facilities, Sizable bed 6X6, bedsides, drawers, reading table",
-      image: "images/second-apartment.jpg",
-    },
-    {
-      hkn: "Superior Deluxe",
-      price: "40,000 / PER NIGHT",
-      content:
-        "Superior Deluxe has the following facilities, Sizable bed 6X6, bedsides, drawers, reading table, reading chair",
-      image: "images/first-apartment.jpg",
-      height: "230px",
-    },
-
-    {
-      hkn: "1 BEDROOM APART",
-      price: "114,000 / PER NIGHT",
-      content:
-        "The 1 Bedroom Apt. has the following facilities, Sizable bed 6X6, bedsides, drawers, reading table",
-      image: "images/thrid-apartment.jpg",
-      height: "230px",
-    },
-    {
-      hkn: "2 BEDROOM APART",
-      price: "200,000 / PER NIGHT",
-      content:
-        "2 Bedroom Apt. has the following facilities, Sizable bed 6X6, bedsides, drawers, reading table",
-      image: "images/4th-apartment.jpg",
-    },
-    {
-      hkn: "Studio Apt",
-      price: "75,000 / PER NIGHT",
-      content:
-        "Studio Apt. has the following facilities, Sizable bed 6X6, bedsides, drawers, reading table",
-      image: "images/fifth-apartment.jpg",
-    },
-  ];
-
   return (
     <>
       <div className="room-price-flex">
@@ -74,7 +34,7 @@ export default function ArrayPart() {
                   </div>
                   <div className="cont-inside-image">
                     <h2>{item.hkn}</h2>
-                    <p>{item.price}</p>
+                    <p>{item.price}/ PER NIGHT</p>
                   </div>
                   <div className="information">
                     <a href="#">{item.content}</a>
