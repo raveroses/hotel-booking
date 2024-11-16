@@ -5,6 +5,7 @@ import BookingArray from "../components/BookingArray";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { FaTimes } from "react-icons/fa";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 export default function Reservation({ newArry }) {
   const [show, setShow] = useState(false);
 
@@ -30,6 +31,19 @@ export default function Reservation({ newArry }) {
 
   const handleCancel = () => {
     setReveal(false);
+  };
+
+  const [newValue, setNewValue] = useState("");
+  const navigate = useNavigate();
+
+  const handleNav = (index) => {
+    const selectedRoom = BookingArray[index];
+    navigate("/payment", {
+      state: {
+        room: selectedRoom,
+        bookingDetails: newArry,
+      },
+    });
   };
   return (
     <>
@@ -116,8 +130,8 @@ export default function Reservation({ newArry }) {
                 </h5>
                 <p>
                   {" "}
-                  {newArry.number}Adult, {newArry.numbers} Child,{" "}
-                  {newArry.numberss} Rooms
+                  {newArry.number}Adult, {newArry.numberss}Child,{" "}
+                  {newArry.numbers} Rooms
                 </p>
               </div>
               <div className="booking2">
@@ -154,7 +168,12 @@ export default function Reservation({ newArry }) {
                             <span>/night</span>
                           </h4>
                         </div>
-                        <button className="bookingg">BOOK ROOM</button>
+                        <button
+                          className="bookingg"
+                          onClick={() => handleNav(index)}
+                        >
+                          BOOK ROOM
+                        </button>
                       </div>
                     </div>
                   </div>

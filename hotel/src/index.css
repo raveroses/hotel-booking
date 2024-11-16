@@ -627,15 +627,19 @@ footer {
   color: rgb(108, 93, 8);
 }
 
-.payment {
+.payment-image {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
   align-content: center;
   gap: 30px;
 }
+
+.paystacks {
+  width: 40px;
+}
 .payment img {
-  width: 70px;
+  width: 50px;
 }
 .second-layer-flex {
   display: flex;
@@ -855,606 +859,214 @@ footer {
   display: block;
 }
 
-@media (max-width: 480px) {
-  .logo-palace {
-    display: block;
-    margin-top: 0px;
-    padding-top: 0px;
-  }
-  .ike {
-    display: block;
-  }
+.flexxing {
+  padding: 60px;
+}
+.flexxing-one {
+  background-color: lightgrey;
+  width: 300px;
+  padding: 15px;
+}
+.flexxing-two {
+  background-color: lightgrey;
+  width: 300px;
+  padding: 15px;
+  margin-top: 15px;
+}
+.total-booking {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-content: center;
+  background-color: rgb(83, 72, 11);
+  color: white;
+  width: 300px;
+  padding: 20px 30px;
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: 600;
+}
+.flexxing-one h3 {
+  text-align: center;
+  font-size: 16px;
+}
+.flexxing-two h3 {
+  text-transform: uppercase;
+  font-size: 16px;
+  color: rgb(83, 72, 11);
+}
+.flexxing-two h4 {
+  text-align: center;
+  text-transform: uppercase;
+  padding-bottom: 20px;
+  font-size: 15px;
+}
+.childrens,
+.total-guest,
+.total-night,
+.check-out,
+.check-in {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: space-between;
+  gap: 100px;
+  margin-top: 10px;
+  font-family: "Kumbh Sans", sans-serif;
+}
 
-  .sticky {
-    justify-content: flex-start;
-    align-content: center;
-    align-items: center;
-    background-color: black;
-    width: 100%;
-    height: 100px;
-    max-width: 100%;
-    position: fixed;
-    z-index: 60; /* Sticky bar */
-    top: 0;
-    left: 0;
-    padding: 60px 0px;
-    gap: 230px;
-    opacity: 0.9;
-    display: flex;
-    /* display: none; */
-  }
-  .navbars ul {
-    /* display: none; */
-    width: 450px;
-    max-width: 100%;
-    position: absolute;
-    left: 0;
-    top: 110px;
-    background-color: black;
-    padding: 20px 0px;
-    opacity: 0.8;
-  }
-  .navbars ul li a {
-    font-size: 11px;
-  }
-  .navbars ul li {
-    float: none;
-    margin-right: 0px;
-    text-align: left;
-    padding: 0px 0px 15px 20px;
-  }
+.childrens p,
+.total-guest p,
+.total-night p,
+.check-out p,
+.check-in p {
+  font-weight: 500;
+  font-size: 13px;
+}
 
-  .addresss {
-    display: none;
-  }
-  .stickys {
-    justify-content: flex-start;
-    align-content: center;
-    align-items: center;
-    background-color: black;
-    width: 100%;
-    height: 100px;
-    max-width: 100%;
-    position: fixed;
-    z-index: 60; /* Sticky bar */
-    top: 0;
-    left: 0;
-    padding: 60px 0px;
-    gap: 230px;
-    opacity: 0.9;
-    display: flex;
-    /* display: none; */
-  }
+.flex {
+  display: flex;
+  align-items: flex-start;
+  align-content: center;
+  justify-content: flex-start;
+  gap: 80px;
+}
+.flex-payment {
+  margin-top: 120px;
+  padding-bottom: 80px;
+}
 
-  .navbar ul {
-    /* display: none; */
-    width: 450px;
-    max-width: 100%;
-    position: absolute;
-    left: 0;
-    top: 90px;
-    background-color: black;
-    display: none;
-    padding: 20px 0px;
-    opacity: 0.8;
-  }
-  .navbar ul li a {
-    font-size: 11px;
-  }
-  .navbar ul li {
-    float: none;
-    margin-right: 0px;
-    text-align: left;
-    padding: 0px 0px 15px 20px;
-  }
+.flex-payment h3 {
+  font-size: 28px;
+  letter-spacing: 6px;
+  margin-bottom: 20px;
+}
 
-  .logo-parts {
-    position: absolute;
-    top: 0px;
-    color: white;
-    font-size: 12px;
-    border-top: none;
-    padding-top: 28px;
-    display: flex;
-    align-items: center;
-    align-content: center;
-    justify-content: flex-start;
-    max-width: 100%;
-    width: 100%;
-    gap: 210px;
-  }
+.names {
+  display: flex;
+  align-items: flex-start;
+  align-content: center;
+  justify-content: flex-start;
+  width: 100%;
+  margin-bottom: 25px;
+}
+.first-name {
+  margin-right: 30px;
+}
 
-  .logo-partss {
-    /* color: white;
-    font-size: 12px; */
-    border-top: none;
-    padding-top: 28px;
-    display: flex;
-    align-items: center;
-    align-content: center;
-    justify-content: flex-start;
-    max-width: 100%;
-    width: 100%;
-    gap: 170px;
-  }
-  /* 
-  .logo-parts ul li a {
-    font-size: 11px;
-    font-weight: 400;
-  } */
-  /* 
-  .logo-parts .navbar ul {
-    width: 450px;
-    max-width: 100%;
-    position: absolute;
-    left: 0;
-    top: 80px;
-    background-color: red;
-    display: block;
-  } */
+.first-name input {
+  width: 250px;
+  padding: 10px;
+  border: 2px solid gray;
+  outline: none;
+}
+.last-name input {
+  width: 250px;
+  padding: 10px;
+  border: 2px solid gray;
+  outline: none;
+}
+.first-name div label {
+  font-size: 12px;
+  font-weight: 600;
+  font-family: "Kumbh Sans", sans-serif;
+  text-transform: uppercase;
+}
 
-  /* .logo-parts .navbar ul li {
-    float: none;
-    margin-right: 0px;
-    text-align: left;
-    padding: 0px 0px 10px 20px;
-    display: none;
-  } */
+.last-name div label {
+  font-size: 12px;
+  font-weight: 600;
+  font-family: "Kumbh Sans", sans-serif;
+  text-transform: uppercase;
+}
 
-  .please {
-    position: absolute;
-    top: 150px;
-    left: 10px;
-    z-index: 9;
-    display: block;
-    /* animation: titilope 1s ease forwards; */
-  }
-  @keyframes titilope {
-    from {
-      left: 10px;
-    }
-    to {
-      left: 200px;
-    }
-  }
+.addresso {
+  margin-bottom: 25px;
+}
+.addresso div label {
+  font-size: 12px;
+  font-weight: 600;
+  font-family: "Kumbh Sans", sans-serif;
+  text-transform: uppercase;
+}
 
-  .plus-icon {
-    display: none;
-  }
-  .top-image img {
-    height: 600px;
-    max-width: 100%;
-    object-fit: cover;
-    object-position: left;
-  }
-  .burger {
-    display: block;
-    color: white;
-    font-size: 30px;
-  }
-  .address {
-    display: none;
-  }
-  .logo img {
-    width: 85px;
-    margin-left: 10px;
-  }
-  .heading {
-    max-width: 100%;
-  }
+.addresso input {
+  width: 530px;
+  padding: 10px;
+  border: 2px solid gray;
+  outline: none;
+}
+.addresso input::placeholder {
+  font-size: 15px;
+}
+.email {
+  margin-right: 30px;
+}
+.email div label,
+.phone div label {
+  font-size: 12px;
+  font-weight: 600;
+  font-family: "Kumbh Sans", sans-serif;
+  text-transform: uppercase;
+}
+.email input,
+.phone input {
+  width: 250px;
+  padding: 10px;
+  border: 2px solid gray;
+  outline: none;
+}
 
-  .top-image img {
-    width: 100%;
-    max-width: 100%;
-  }
-  .heading-content {
-    padding: 0px 0px;
-  }
-  .logo-part {
-    display: none;
-  }
+.contact {
+  display: flex;
+  align-items: flex-start;
+  align-content: center;
+  justify-content: flex-start;
+  margin-bottom: 25px;
+  width: 100%;
+}
 
-  .carousel {
-    top: 330px;
-    left: 46px;
-    text-align: center;
-    max-width: 100%;
-  }
+.order-note textarea {
+  width: 530px;
+  padding: 20px;
+  border: 2px solid gray;
+  outline: none;
+}
 
-  .carousel h2 {
-    font-size: 25px;
-    font-weight: 500;
-    text-align: center;
-  }
+.order-note textarea::placeholder {
+  font-size: 15px;
+  font-family: "Kumbh Sans", sans-serif;
+}
 
-  .carousel .flexo {
-    font-size: 0px;
-    margin-top: 5px;
-  }
-  .carousel .flexo div {
-    width: 31px;
-    height: 1px;
-    margin-top: 9px;
-  }
+.payment div label,
+.order-note div label {
+  font-size: 12px;
+  font-weight: 600;
+  font-family: "Kumbh Sans", sans-serif;
+  text-transform: uppercase;
+}
+.payment div {
+  display: flex;
+  align-items: flex-start;
+  align-content: center;
+  justify-content: flex-start;
+  width: 100%;
+  margin-bottom: 25px;
+  gap: 10px;
+}
 
-  .carousel .flexo p {
-    margin-left: 15px;
-    margin-right: 16px;
-    font-size: 13px;
-  }
-  .icon {
-    top: 353px;
-    gap: 250px;
-    left: 42px;
-    max-width: 100%;
-  }
-  .ikon {
-    font-size: 30px;
-  }
+.place-order button {
+  padding: 19px 30px;
+  margin-top: 10px;
+  background-color: rgb(97, 85, 18);
+  color: white;
+  font-size: 13px;
+  font-weight: 600;
+  border: none;
+}
 
-  .date-flex {
-    flex-direction: column;
-    top: 600px;
-    left: 0px;
-    background-color: rgb(40, 35, 35);
-    width: 100%;
-    max-width: 100%;
-    padding: 13px 10px;
-    justify-content: center;
-    align-items: center;
-  }
-  .arrival-input {
-    width: 320px;
-    padding: 7px 7px;
-    margin: 5px auto;
-  }
-  .arrival-flex {
-    display: flex;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-    width: 100%;
-    max-width: 100%;
-  }
-  .arrival-content {
-    font-size: 14px;
-  }
-  .input-date input {
-    padding: 15px 89px 15px 0px;
-    width: 300px;
-    font-size: 20px;
-    text-transform: uppercase;
-  }
-  .showing-adult {
-    padding: 0px;
-    width: 320px;
-    margin: 7px auto;
-  }
-  .showing-adult h2 {
-    margin-top: 0px;
-  }
-  .dropdown {
-    padding: 7px 0px;
-    margin: auto;
-    width: 300px;
-  }
-  .roomss {
-    margin-top: 599px;
-    padding: 75px 7px;
-  }
-  .our-image img {
-    width: 170px;
-    max-width: 100%;
-  }
-  .roomss p {
-    padding: 22px 15px;
-    font-weight: 300;
-    font-size: 15px;
-  }
-  .date {
-    margin: 0px;
-  }
-
-  .availabibilty {
-    padding: 19px 36px;
-    width: 320px;
-    text-align: center;
-    margin: 5px auto;
-  }
-  .room-price-flex-media {
-    display: flex;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-    gap: 0px;
-    width: 100%;
-    visibility: visible;
-    max-width: 100%;
-  }
-  .room-price-flex {
-    display: none;
-  }
-
-  .image-apartment {
-    margin: 10px 10px;
-  }
-  .second-image img {
-    width: 390px;
-    max-width: 100%;
-  }
-  .first-image img {
-    width: 390px;
-    max-width: 100%;
-  }
-  .second-image {
-    position: static;
-  }
-  .image-collapse {
-    flex-direction: column;
-    display: flex;
-    align-self: center;
-    align-content: center;
-    justify-content: center;
-    position: relative;
-    margin-left: 0px;
-  }
-  .first-image {
-    margin: auto;
-  }
-  .second-image {
-    margin: auto;
-  }
-  .image-array {
-    width: 100%;
-    border: 1px solid red;
-    max-width: 100%;
-  }
-  .reel-image img {
-    width: 439px;
-  }
-  .information a {
-    font-size: 14px;
-  }
-  .cont-inside-image {
-    top: 163px;
-    left: 47px;
-    text-align: center;
-  }
-  .ikkon {
-    font-size: 15px;
-    font-family: "Kumbh Sans", sans-serif;
-    font-weight: 500;
-    color: gray;
-    display: grid;
-    justify-content: flex-start;
-    padding: 0px 0px;
-  }
-  .beed {
-    margin-bottom: 20px;
-    padding-left: 74px;
-  }
-  .icons {
-    margin-bottom: 20px;
-    padding-left: 74px;
-  }
-  .beed p {
-    font-size: 10px;
-    line-height: 30px;
-  }
-  .arrow {
-    margin-bottom: 20px;
-  }
-
-  .arrow p {
-    font-size: 10px;
-    line-height: 30px;
-  }
-
-  .wifi {
-    font-size: 10px;
-    line-height: 30px;
-  }
-  .food {
-    margin-bottom: 20px;
-  }
-
-  .food p {
-    font-size: 10px;
-    line-height: 30px;
-  }
-  .first-grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
-    margin-top: 71px;
-  }
-  .close-to-background {
-    width: 100%;
-    height: 2500px;
-    max-width: 100%;
-    padding: 62px 20px;
-    background-image: url("images/bg-gallery.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-  }
-  .modal-image {
-    background-color: rgb(26, 30, 30);
-    width: 204px;
-    height: 200px;
-    position: absolute;
-    top: 100px;
-    left: 20px;
-    z-index: 50;
-    padding: 5px;
-  }
-  .gallery-flex {
-    flex-direction: column;
-    max-width: 100%;
-  }
-  .imagg img {
-    width: 180px;
-    height: 60px;
-    display: none;
-  }
-  .button {
-    display: flex;
-    justify-content: space-between;
-    align-content: center;
-    align-items: flex-start;
-    gap: 0px;
-  }
-  .firstlayer-flex {
-    display: flex;
-    align-items: flex-start;
-    align-content: center;
-    justify-content: flex-start;
-    gap: 0px;
-    border-bottom: 0.5px solid gray;
-    /* padding-bottom: 15px; */
-    flex-direction: column;
-  }
-  .firstlayer-flex img {
-    margin: auto;
-    margin-bottom: 67px;
-    max-width: 100%;
-  }
-  .me {
-    display: block;
-  }
-  .you {
-    display: none;
-  }
-
-  footer {
-    background-color: rgb(37, 36, 36);
-    padding: 40px 10px 35px 10px;
-  }
-  .anchor-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    justify-content: flex-start;
-    align-content: flex-start;
-    align-items: flex-start;
-    gap: 0px;
-    padding: 0px 10px;
-  }
-  .anchor-grid a {
-    color: white;
-    text-decoration: none;
-    font-size: 11px;
-    font-family: "Kumbh Sans", sans-serif;
-    margin-bottom: 16px;
-    margin-right: 48px;
-  }
-  .second-layer-flex {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    align-content: center;
-    gap: 0px;
-    margin-top: 30px;
-    flex-direction: column;
-  }
-  .second-layer-flex p {
-    font-size: 10px;
-    padding: 0px 10px;
-  }
-  .remaining {
-    text-align: center;
-    margin-top: 11px;
-  }
-  .p-content {
-    padding: 41px 5px;
-    text-align: center;
-  }
-  .p-content p {
-    font-size: 15px;
-  }
-  .payment {
-    margin: auto;
-  }
-  .payment img {
-    width: 30px;
-  }
-  .cl {
-    width: 30px;
-  }
-
-  .gall {
-    text-align: center;
-  }
-  .gall h1 {
-    color: white;
-    font-size: 35px;
-    font-weight: 500;
-  }
-  .ul {
-    display: none;
-  }
-
-  .heading-choose h1 {
-    margin-top: 0px;
-    font-size: 15px;
-  }
-
-  .bodyy {
-    padding: 30px 10px;
-  }
-  .numbers {
-    font-size: 15px;
-    padding-top: 26px;
-    display: block;
-    margin-left: 0;
-    padding-bottom: 10px;
-  }
-  .margin-line {
-    display: none;
-  }
-
-  .props-pass {
-    flex-direction: column;
-    gap: 0px;
-    margin-top: 50px;
-  }
-  .select {
-    width: 100%;
-    margin: auto;
-  }
-
-  .liist h5 {
-    font-size: 23px;
-  }
-  .hotel-image {
-    margin-top: 70px;
-  }
-
-  .imaginary-display {
-    flex-direction: column;
-    gap: 0px;
-    width: 100%;
-    max-width: 100%;
-  }
-
-  .imaging img {
-    max-width: 100%;
-    width: 450px;
-  }
-  .imaginary-content {
-    width: 100%;
-  }
-
-  .imaginary-content p {
-    padding-right: 20px;
-    padding-top: 20px;
-  }
-  .prii {
-    padding-top: 45px;
-  }
-  .priii h4 {
-    font-size: 35px;
-  }
-  .bookingg {
-    margin-top: 10px;
-  }
+.place-order button:hover {
+  background-color: white;
+  border: 1px solid rgb(97, 85, 18);
+  color: rgb(97, 85, 18);
 }

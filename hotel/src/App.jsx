@@ -3,7 +3,8 @@ import Home from "./pages/Home";
 import Footer from "./components/Footer";
 import { useState } from "react";
 import Reservation from "./pages/Reservation";
-import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Payment from "./components/Payment";
 
 function App() {
   const numberArray = [
@@ -100,6 +101,7 @@ function App() {
             path="/reservation"
             element={<Reservation newArry={newArry} />}
           />
+          <Route path="/payment" element={<Payment newArry={newArry} />} />
         </Routes>
         <Footer />
       </BrowserRouter>
