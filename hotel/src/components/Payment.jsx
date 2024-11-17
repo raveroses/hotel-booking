@@ -4,7 +4,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { FaTimes } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { Stripe } from "stripe";
+import { PaystackButton } from "react-paystack";
 
 export default function Payment({ newArry }) {
   const [show, setShow] = useState(false);
@@ -51,9 +51,44 @@ export default function Payment({ newArry }) {
     currency: "NGN",
   }).format(totalPrice);
 
-  const payment = async () => {
-    // const stripe=
+  const [detail, setDetail] = useState({
+    firstname: "",
+    lastname: "",
+    phoneNumber: "",
+    address: "",
+    email: "",
+    text: "",
+  });
+  const preventDefault = (e) => {
+    e.preventDefault();
   };
+
+  const handleOnchange = (e) => {
+    const { name, value } = e.target;
+    setDetail((prev) => ({ ...prev, [name]: value }));
+  };
+  const publicKey = "pk_test_f008b74aed3b3e38328034093253b85eaa8628a6";
+  const componentProps = (id) => ({
+    email: detail.email,
+    amount: id, // Pass the `id` or appropriate value for `amount`
+    metadata: {
+      firstname: detail.firstname,
+      lastname: detail.lastname,
+      phoneNumber: detail.phoneNumber,
+    },
+    publicKey,
+    text: "Pay Now",
+    onSuccess: () =>
+      alert("Thanks for doing business with us! Come back soon!!"),
+    onClose: () => alert("Wait! Don't leave :("),
+  });
+
+  const handlePayment = () => {
+    const props = componentProps(totalPrice); // Ensure you pass the correct totalPrice
+    const paystack = new PaystackButton(props);
+    paystack.openIframe(); // Opens the Paystack iframe
+  };
+
   return (
     <>
       <div className="heading-hero">
@@ -177,19 +212,31 @@ export default function Payment({ newArry }) {
         <div className="flex-payment">
           <h3>BILLING DETAILS</h3>
 
-          <form action="">
+          <form onSubmit={preventDefault}>
             <div className="names">
               <div className="first-name">
                 <div>
                   <label htmlFor="firstName">First Name *</label>
                 </div>
-                <input type="text" id="firstName" name="first-name" />
+                <input
+                  type="text"
+                  id="firstname"
+                  name="firstname"
+                  value={detail.firstname}
+                  onChange={handleOnchange}
+                />
               </div>
               <div className="last-name">
                 <div>
                   <label htmlFor="lastName">Last Name *</label>
                 </div>
-                <input type="text" id="lastName" name="last-name" />
+                <input
+                  type="text"
+                  id="lastName"
+                  name="lastname"
+                  value={detail.lastname}
+                  onChange={handleOnchange}
+                />
               </div>
             </div>
 
@@ -202,6 +249,8 @@ export default function Payment({ newArry }) {
                 id="address"
                 name="address"
                 placeholder="Street Address"
+                value={detail.address}
+                onChange={handleOnchange}
               />
             </div>
 
@@ -210,13 +259,24 @@ export default function Payment({ newArry }) {
                 <div>
                   <label htmlFor="">Email*</label>
                 </div>
-                <input type="email" name="email" id="" />
+                <input
+                  type="email"
+                  name="email"
+                  id=""
+                  value={detail.email}
+                  onChange={handleOnchange}
+                />
               </div>
               <div className="phone">
                 <div>
                   <label htmlFor="">Phone Number *</label>
                 </div>
-                <input type="text" />
+                <input
+                  type="text"
+                  name="phoneNumber"
+                  value={detail.phoneNumber}
+                  onChange={handleOnchange}
+                />
               </div>
             </div>
             <div className="order-note">
@@ -225,9 +285,11 @@ export default function Payment({ newArry }) {
               </div>
 
               <textarea
-                name=""
+                name="text"
                 id=""
                 placeholder="Notes about your order, eg. special notes"
+                value={detail.text}
+                onChange={handleOnchange}
               ></textarea>
             </div>
             <div className="payment">
@@ -248,7 +310,7 @@ export default function Payment({ newArry }) {
                 <img src="images/mastercard.jpg" alt="mastercard" />
               </div>
             </div>
-            <div className="place-order">
+            <div className="place-order" onClick={handlePayment}>
               <button>PLACE ORDER</button>
             </div>
           </form>
