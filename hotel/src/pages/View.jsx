@@ -3,6 +3,10 @@ import { CiLocationOn } from "react-icons/ci";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { FaTimes } from "react-icons/fa";
 import { useEffect, useState } from "react";
+import GridImage from "../components/GridImage";
+import { FaRegTimesCircle } from "react-icons/fa";
+import { FaChevronCircleRight } from "react-icons/fa";
+import { FaChevronCircleLeft } from "react-icons/fa";
 
 export default function View() {
   const [show, setShow] = useState(false);
@@ -30,6 +34,50 @@ export default function View() {
   const handleCancel = () => {
     setReveal(false);
   };
+
+  const column = [
+    { image: "images/passage.jpg", id: 13 },
+    { image: "images/big.jpg", id: 14 },
+
+    { image: "images/luxry.png", id: 15 },
+  ];
+
+  const [container, setContainer] = useState([...GridImage, ...column]);
+
+  const [number, setNumber] = useState(column[1].image);
+
+  const handleClick = (id) => {
+    const item = container.find((item) => id === item.id);
+    if (item) {
+      setNumber(item.image);
+      setCancel((c) => !c);
+    }
+  };
+
+  const images = GridImage.map((item, index) => {
+    return (
+      <div
+        className="grid-image"
+        key={index}
+        onClick={() => handleClick(item.id)}
+      >
+        <img src={item.image} alt={item.id} />
+      </div>
+    );
+  });
+
+  const [cancel, setCancel] = useState(false);
+  const handleCancell = () => {
+    setCancel((c) => !c);
+  };
+  const [count, setCount] = useState(0);
+  const handleNext = () => {
+    if (count < container.length - 1) {
+      // setCount((c) => c + 1);
+      setCount(column[1].image);
+    }
+  };
+
   return (
     <>
       <div className="heading-hero">
@@ -57,7 +105,7 @@ export default function View() {
             </div>
             <ul style={{ display: reveal ? "block" : "none" }}>
               <li>
-                <a href=""> Home</a>
+                <a href="/"> Home</a>
               </li>
               <li>
                 <a href="">Rooms & Rate</a>
@@ -96,6 +144,50 @@ export default function View() {
           <h1>GALLERY</h1>
         </div>
       </div>
+
+      <div className="images-containers">
+        <div className="grid-column">
+          {column?.map((item, index) => {
+            return (
+              <div
+                key={index}
+                className="col"
+                onClick={() => handleClick(item.id)}
+              >
+                {" "}
+                <img src={item.image} alt={item.id} />
+              </div>
+            );
+          })}
+        </div>
+        {/* ENDING OF THE FIRST MAP */}
+        <div className="two-grid">{images}</div>
+      </div>
+
+      <div
+        className="grid-modal"
+        style={{ display: cancel ? "block" : "none" }}
+      >
+        <div className="cancell" onClick={handleCancell}>
+          <FaRegTimesCircle
+            style={{ color: "white", fontWeight: "700px", fontSize: "20px" }}
+          />
+        </div>
+        <img src={number} alt="" />
+        <div className="moving-icon">
+          <div className="prev">
+            <FaChevronCircleLeft />
+          </div>
+          <div className="numbs">2/5</div>
+          <div className="nextt" onClick={handleNext}>
+            <FaChevronCircleRight />
+          </div>
+        </div>
+      </div>
+      <div
+        className="overlay"
+        style={{ display: cancel ? "block" : "none" }}
+      ></div>
     </>
   );
 }

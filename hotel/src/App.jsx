@@ -1,11 +1,12 @@
 import "./index.css";
+
 import Home from "./pages/Home";
 import Footer from "./components/Footer";
 import { useState } from "react";
 import Reservation from "./pages/Reservation";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Payment from "./components/Payment";
-import View from "./components/View";
+import View from "./pages/View";
 
 function App() {
   const numberArray = [

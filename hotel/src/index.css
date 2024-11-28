@@ -1075,7 +1075,75 @@ footer {
   border: 1px solid rgb(97, 85, 18);
   color: rgb(97, 85, 18);
 }
+.images-containers {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  align-content: center;
+  gap: 40px;
+  margin-bottom: 50px;
+}
+.two-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  gap: 35px;
+  margin-top: 30px;
+}
+.grid-image img {
+  width: 300px;
+  height: 250px;
+}
 
+.col {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-top: 30px;
+}
+.col img {
+  width: 500px;
+  height: 550px;
+}
+
+.grid-modal {
+  background-color: rgb(31, 35, 44);
+  height: 550px;
+  width: 650px;
+  position: absolute;
+  top: 400px;
+  left: 250px;
+  z-index: 10;
+  padding: 0px 10px;
+}
+.grid-modal img {
+  max-width: 100%; /* Adjust to container size */
+  max-height: 100%;
+  object-fit: cover; /* Prevent distortion */
+  object-position: center;
+  width: 600px;
+  height: 400px;
+  margin: 30px;
+}
+.cancell {
+  margin-left: 620px;
+  margin-top: 5px;
+}
+
+.moving-icon {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-content: center;
+}
+
+.prev {
+  color: white;
+  font-size: 25px;
+}
+.nextt {
+  color: white;
+  font-size: 25px;
+}
 @media (max-width: 480px) {
   .logo-palace {
     display: block;
