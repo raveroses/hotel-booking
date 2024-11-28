@@ -138,7 +138,7 @@ export default function Buttom() {
           style={{ display: show ? "block" : "none" }}
         ></div>
         <div className="view">
-          <a href="#">View More</a>
+          <a href="/view">View More</a>
         </div>
       </div>
     </>

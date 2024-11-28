@@ -5,7 +5,7 @@ import { FaTimes } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { PaystackButton } from "react-paystack";
-
+// import PaymentButton from "./PaymentBtton";
 export default function Payment({ newArry }) {
   const [show, setShow] = useState(false);
   const [date, setDate] = useState(new Date(newArry.departure));
@@ -58,9 +58,21 @@ export default function Payment({ newArry }) {
     address: "",
     email: "",
     text: "",
+    checked: false,
   });
+
   const preventDefault = (e) => {
     e.preventDefault();
+    if (
+      !detail.firstname ||
+      !detail.lastname ||
+      !detail.email ||
+      !detail.checked
+    ) {
+      alert("Please fill out all required fields!");
+      return;
+    }
+    setDetail("");
   };
 
   const handleOnchange = (e) => {
@@ -68,25 +80,20 @@ export default function Payment({ newArry }) {
     setDetail((prev) => ({ ...prev, [name]: value }));
   };
   const publicKey = "pk_test_f008b74aed3b3e38328034093253b85eaa8628a6";
-  const componentProps = (id) => ({
+  const componentProps = {
     email: detail.email,
-    amount: id, // Pass the `id` or appropriate value for `amount`
+    amount: totalPrice * 100,
     metadata: {
       firstname: detail.firstname,
       lastname: detail.lastname,
       phoneNumber: detail.phoneNumber,
     },
     publicKey,
-    text: "Pay Now",
+    text: "PLACE ORDER",
     onSuccess: () =>
       alert("Thanks for doing business with us! Come back soon!!"),
-    onClose: () => alert("Wait! Don't leave :("),
-  });
-
-  const handlePayment = () => {
-    const props = componentProps(totalPrice); // Ensure you pass the correct totalPrice
-    const paystack = new PaystackButton(props);
-    paystack.openIframe(); // Opens the Paystack iframe
+    onClose: () =>
+      alert("Wait! Don't leave , Your Transaction is on processing :("),
   };
 
   return (
@@ -294,7 +301,12 @@ export default function Payment({ newArry }) {
             </div>
             <div className="payment">
               <div>
-                <input type="radio" name="" id="" />
+                <input
+                  type="radio"
+                  name="checked"
+                  checked={detail.checked}
+                  onChange={handleOnchange}
+                />
                 <label htmlFor="">CREDIT CARD</label>
               </div>
               <div className="pament-image">
@@ -310,8 +322,8 @@ export default function Payment({ newArry }) {
                 <img src="images/mastercard.jpg" alt="mastercard" />
               </div>
             </div>
-            <div className="place-order" onClick={handlePayment}>
-              <button>PLACE ORDER</button>
+            <div className="place-order">
+              <PaystackButton {...componentProps} />
             </div>
           </form>
         </div>
