@@ -7,6 +7,8 @@ import GridImage from "../components/GridImage";
 import { FaRegTimesCircle } from "react-icons/fa";
 import { FaChevronCircleRight } from "react-icons/fa";
 import { FaChevronCircleLeft } from "react-icons/fa";
+import { Link } from "react-router-dom";
+// import RoomRate from "./RoomRate";
 
 export default function View() {
   const [show, setShow] = useState(false);
@@ -71,10 +73,26 @@ export default function View() {
     setCancel((c) => !c);
   };
   const [count, setCount] = useState(0);
+  // const handleNext = () => {
+  //   if (count < container.length - 1) {
+  //     // setCount((c) => c + 1);
+  //     setNumber(column[setCount((c) => c + 1)].image);
+  //   }
+  // };
+
   const handleNext = () => {
     if (count < container.length - 1) {
-      // setCount((c) => c + 1);
-      setCount(column[1].image);
+      const nextCount = count + 1; // Calculate the next value
+      setCount(nextCount); // Update the count state
+      setNumber(container[nextCount].image); // Use the new count to access the image
+    }
+  };
+
+  const handleprev = () => {
+    if (count > 0) {
+      const nextCount = count - 1; // Calculate the next value
+      setCount(nextCount); // Update the count state
+      setNumber(container[nextCount].image); // Use the new count to access the image
     }
   };
 
@@ -105,10 +123,10 @@ export default function View() {
             </div>
             <ul style={{ display: reveal ? "block" : "none" }}>
               <li>
-                <a href="/"> Home</a>
+                <Link to="/"> Home</Link>
               </li>
               <li>
-                <a href="">Rooms & Rate</a>
+                <Link to="/room">Rooms & Rate</Link>
               </li>
               <li>
                 <a href="">Car Hire</a>
@@ -122,10 +140,10 @@ export default function View() {
             </ul>
             <ul className="ul">
               <li>
-                <a href=""> Home</a>
+                <Link to="/">Hotel</Link>
               </li>
               <li>
-                <a href="">Rooms & Rate</a>
+                <Link to="/room">Rooms & Rate</Link>
               </li>
               <li>
                 <a href="">Car Hire</a>
@@ -175,10 +193,12 @@ export default function View() {
         </div>
         <img src={number} alt="" />
         <div className="moving-icon">
-          <div className="prev">
+          <div className="prev" onClick={handleprev}>
             <FaChevronCircleLeft />
           </div>
-          <div className="numbs">2/5</div>
+          <div className="numbs">
+            {count + 1}/{container.length}
+          </div>
           <div className="nextt" onClick={handleNext}>
             <FaChevronCircleRight />
           </div>

@@ -721,6 +721,7 @@ footer {
   margin-top: 50px;
   text-align: center;
   color: white;
+  text-transform: uppercase;
 }
 .heading h1 {
   color: white;
@@ -1143,6 +1144,65 @@ footer {
 .nextt {
   color: white;
   font-size: 25px;
+}
+
+.numbs {
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.roomie-flex {
+  display: flex;
+  justify-content: flex-start;
+  gap: 40px;
+  margin: 60px;
+  align-items: center;
+}
+.write-up-images img {
+  width: 750px;
+}
+
+.writeup h1 {
+  font-size: 35px;
+  text-transform: uppercase;
+  font-weight: 750;
+  padding-bottom: 10px;
+}
+.writeup p {
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.real-writeup {
+  font-size: 16px;
+  /* padding-right: 20px; */
+  padding-top: 20px;
+  line-height: 1.5;
+  font-weight: 500;
+  color: gray;
+}
+.writeup button {
+  padding: 10px 20px;
+  text-transform: uppercase;
+  font-size: 12px;
+  background-color: rgb(142, 112, 55);
+  border: none;
+  color: white;
+  font-weight: 600;
+  margin-top: 20px;
+  border: 2px solid rgb(142, 112, 55);
+}
+.writeup button:hover {
+  background-color: transparent;
+  color: rgb(142, 112, 55);
+}
+.order-1 {
+  order: 1;
+}
+
+.order-2 {
+  order: 2;
 }
 @media (max-width: 480px) {
   .logo-palace {
@@ -1826,5 +1886,49 @@ footer {
     padding: 20px;
     border: 2px solid gray;
     outline: none;
+  }
+  .images-containers {
+    flex-direction: column;
+    margin: 20px;
+  }
+  .two-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  .grid-image img {
+    width: 100%;
+    height: 250px;
+    max-width: 100%;
+  }
+
+  .col img {
+    width: 100%;
+    height: 550px;
+    max-width: 100%;
+  }
+  .grid-modal {
+    background-color: rgb(31, 35, 44);
+    height: 490px;
+    width: 100%;
+    position: absolute;
+    top: 200px;
+    left: 0px;
+    z-index: 10;
+    padding: 0px 10px;
+    margin: auto;
+  }
+  .grid-modal img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    object-position: center;
+    width: 100%;
+    /* height: 400px; */
+    margin: 0px;
+  }
+  .cancell {
+    margin-left: 320px;
+    margin-top: 5px;
   }
 }

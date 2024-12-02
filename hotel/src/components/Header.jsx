@@ -8,6 +8,7 @@ import { FaTimes } from "react-icons/fa";
 import HomeBody from "./HomeBody";
 import Date from "./Date";
 import ArrayPart from "./ArrayPart";
+import { Link } from "react-router-dom";
 // import Sticky from "./Sticky";
 export default function Header({
   show,
@@ -127,7 +128,7 @@ export default function Header({
                   <a href=""> Home</a>
                 </li>
                 <li>
-                  <a href="">Rooms & Rate</a>
+                  <Link to="/room">Rooms & Ratek</Link>
                 </li>
                 <li>
                   <a href="">Car Hire</a>
@@ -159,10 +160,10 @@ export default function Header({
               />
               <ul style={{ display: burger ? "block" : "none" }}>
                 <li>
-                  <a href=""> Home</a>
+                  <a href="/"> Home</a>
                 </li>
                 <li>
-                  <a href="">Rooms & Rate</a>
+                  <a href="/room">Rooms & Rate</a>
                 </li>
                 <li>
                   <a href="">Car Hire</a>
