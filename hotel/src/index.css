@@ -1197,11 +1197,11 @@ footer {
   background-color: transparent;
   color: rgb(142, 112, 55);
 }
-.order-1 {
+.orderOne {
   order: 1;
 }
 
-.order-2 {
+.orderTwo {
   order: 2;
 }
 @media (max-width: 480px) {

@@ -37,13 +37,11 @@ export default function RoomRate() {
     return (
       <div className="roomie-flex" key={index}>
         <div
-          className={`write-up-images${
-            index % 2 === 0 ? "order-1" : "order-2"
-          }`}
+          className={`write-up-images ${index % 2 === 0 ? orderOne : orderTwo}`}
         >
           <img src={item.Image} alt={`imaage${index}`} />
         </div>
-        <div className={`writeup ${index % 2 === 0 ? "order-1" : "order-2"}`}>
+        <div className={`writeup ${index % 2 === 0 ? orderTwo : orderOne}`}>
           <h1>{item.heading}</h1>
           <p>{item.headingSix}</p>
           <div className="real-writeup">{item.paragraph}</div>
