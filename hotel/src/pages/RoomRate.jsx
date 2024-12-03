@@ -4,7 +4,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { FaTimes } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import RoomRateArray from "../components/RoomRateArray";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function RoomRate() {
   const [show, setShow] = useState(false);
@@ -33,11 +33,18 @@ export default function RoomRate() {
     setReveal(false);
   };
 
+  const navigate = useNavigate();
+  const handleOnclick = (id) => {
+    navigate("/product", { state: { placeholder: id } });
+  };
   const roomy = RoomRateArray.map((item, index) => {
+    const orderOne = "order-left";
+    const orderTwo = "order-right";
     return (
       <div className="roomie-flex" key={index}>
         <div
           className={`write-up-images ${index % 2 === 0 ? orderOne : orderTwo}`}
+          onClick={() => handleOnclick(item)}
         >
           <img src={item.Image} alt={`imaage${index}`} />
         </div>
@@ -45,7 +52,7 @@ export default function RoomRate() {
           <h1>{item.heading}</h1>
           <p>{item.headingSix}</p>
           <div className="real-writeup">{item.paragraph}</div>
-          <button>{item.view}</button>
+          <button onClick={() => handleOnclick(item)}>{item.view}</button>
         </div>
       </div>
     );

@@ -8,6 +8,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Payment from "./components/Payment";
 import View from "./pages/View";
 import RoomRate from "./pages/RoomRate";
+import ProductDisplay from "./pages/ProductDisplay";
 
 function App() {
   const numberArray = [
@@ -107,6 +108,7 @@ function App() {
           <Route path="/payment" element={<Payment newArry={newArry} />} />
           <Route path="/view" element={<View />} />
           <Route path="/room" element={<RoomRate />} />
+          <Route path="/product" element={<ProductDisplay />} />
         </Routes>
         <Footer />
       </BrowserRouter>
