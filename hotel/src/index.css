@@ -16,6 +16,9 @@ body {
   width: 100%;
   height: 100%;
 }
+html {
+  scroll-behavior: smooth;
+}
 
 .heading {
   position: relative;
@@ -66,10 +69,10 @@ body {
 }
 
 .logo img {
-  width: 90px;
+  width: 80px;
 }
 .logos img {
-  width: 90px;
+  width: 80px;
 }
 .navbar ul li a {
   text-align: center;
@@ -1321,11 +1324,103 @@ footer {
   /* border: none;/ */
   width: 100%;
   border: 2px solid rgb(142, 112, 55);
+  margin-top: 15px;
 }
 .bookie:hover {
   background-color: white;
   color: rgb(142, 112, 55);
   /* border: 1px solid rgb(142, 112, 55); */
+}
+
+.small-images {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 20px;
+  margin-top: 10px;
+}
+.small-images img {
+  width: 120px;
+}
+.half-content {
+  position: absolute;
+  top: 410px;
+  color: white;
+  font-size: 16px;
+  background-color: black;
+  width: 100%;
+  padding: 15px;
+  opacity: 0.6;
+}
+.hr {
+  margin: 50px;
+}
+.description-flex {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 150px;
+  margin: 50px;
+  border-bottom: 1px solid gray;
+  padding-bottom: 40px;
+}
+.description {
+  cursor: pointer;
+  font-size: 14px;
+  color: rgb(142, 112, 55);
+}
+.description div {
+  width: 200px;
+  height: 2px;
+  background-color: lightgray;
+}
+.separate {
+  background-color: rgb(142, 112, 55);
+  width: 50px;
+  height: 2px;
+}
+
+.headline {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 18px;
+}
+
+.complete {
+  font-size: 15px;
+  color: gray;
+  margin-top: 10px;
+}
+
+.second-description {
+  border-left: 1px solid gray;
+  padding-left: 30px;
+}
+
+.sec {
+  margin-top: 40px;
+  font-size: 17px;
+}
+.icon-flex {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.icon-feautures-name {
+  color: black;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.sections img {
+  width: 300px;
+}
+
+.another-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 @media (max-width: 480px) {
   .logo-palace {
