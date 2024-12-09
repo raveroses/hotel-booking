@@ -1415,12 +1415,40 @@ footer {
 }
 
 .sections img {
-  width: 300px;
+  width: 250px;
 }
-
+.sections h1 {
+  text-transform: uppercase;
+  color: black;
+  font-size: 18px;
+}
 .another-section {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin: 50px;
+  gap: 20px;
+}
+.icons-flex {
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+  align-items: flex-start;
+}
+.iconss {
+  font-size: 20px;
+  font-weight: 700;
+}
+.icons-flex p {
+  font-size: 14px;
+  font-weight: 500;
+}
+.another-section button {
+  border: 2px solid black;
+  padding: 8px 15px;
+  text-transform: uppercase;
+  font-size: 10px;
+  color: black;
+  font-weight: 600;
 }
 @media (max-width: 480px) {
   .logo-palace {
@@ -2048,6 +2076,7 @@ footer {
   }
   form {
     max-width: 100%;
+    margin: 0px;
   }
   .flexxing-two {
     width: 100%;
@@ -2148,5 +2177,158 @@ footer {
   .cancell {
     margin-left: 320px;
     margin-top: 5px;
+  }
+  .display-flex {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+  }
+  .image img {
+    width: 100%;
+    max-width: 100%;
+  }
+  .half-content {
+    top: 204px;
+    font-size: 9px;
+    width: 100%;
+  }
+  .prevv {
+    font-size: 18px;
+    top: 144px;
+    margin-left: 10px;
+  }
+  .nexts {
+    font-size: 18px;
+    top: 142px;
+    margin-left: 292px;
+  }
+  .small-images img {
+    width: 80px;
+  }
+  .paying img {
+    margin-top: 2px;
+    margin-left: 130px;
+    width: 74px;
+    max-width: 100%;
+  }
+  .paying {
+    margin: 0px;
+    width: 100%;
+    padding: 30px;
+    max-width: 100%;
+  }
+  .text-center h1 {
+    font-size: 25px;
+  }
+  .text-center .pa {
+    font-size: 9px;
+  }
+  .text-center .nighty {
+    font-size: 12px;
+  }
+  .paying input {
+    font-size: 11px;
+  }
+  .paying label {
+    font-size: 9px;
+  }
+  .label-alike {
+    font-size: 9px;
+  }
+  .arrival-number {
+    padding: 1px 15px;
+    gap: 215px;
+    max-width: 100%;
+    width: 100%;
+  }
+  .bookie {
+    font-weight: 600;
+    padding: 8px;
+    width: 100%;
+    margin-top: 15px;
+    max-width: 100%;
+    font-size: 11px;
+  }
+  .rolldown-number {
+    width: 100%;
+    text-align: center;
+    max-width: 100%;
+  }
+  .description-flex {
+    gap: 88px;
+    margin: 10px;
+    border-bottom: 1px solid gray;
+    padding-bottom: 40px;
+    flex-direction: column;
+  }
+  .description {
+    cursor: pointer;
+    font-size: 11px;
+    color: rgb(142, 112, 55);
+  }
+  .description h4 {
+    text-align: center;
+    /* margin: auto; */
+  }
+  .description div {
+    width: 100%;
+    height: 2px;
+    background-color: lightgray;
+  }
+  .second-description {
+    border-left: none;
+    padding-left: 0px;
+    max-width: 100%;
+  }
+  .headline {
+    font-size: 11px;
+  }
+  .complete {
+    font-size: 12px;
+    margin-top: 10px;
+    padding-right: 32px;
+  }
+  .sec {
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  .icons {
+    margin-bottom: 20px;
+    padding-left: 7px;
+  }
+  .icons img {
+    width: 22px;
+  }
+  .icon-feautures-name {
+    color: black;
+    font-size: 12px;
+    font-weight: 500;
+  }
+  .another-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 10px;
+    gap: 20px;
+  }
+  .sections img {
+    width: 100%;
+    max-width: 100%;
+  }
+  .roomie-flex {
+    gap: 40px;
+    margin: 10px;
+    align-items: flex-start;
+    flex-direction: column;
+    max-width: 100%;
+  }
+  .write-up-images img {
+    width: 100%;
+    max-width: 100%;
+  }
+  .order-left {
+    order: 2;
+  }
+  .writeup h1 {
+    font-size: 22px;
   }
 }

@@ -46,7 +46,7 @@ export default function RoomRate() {
           className={`write-up-images ${index % 2 === 0 ? orderOne : orderTwo}`}
           onClick={() => handleOnclick(item)}
         >
-          <img src={item.image} alt={`imaage${index}`} />
+          <img src={item.image[0]} alt={`imaage${index}`} />
         </div>
         <div className={`writeup ${index % 2 === 0 ? orderTwo : orderOne}`}>
           <h1>{item.heading}</h1>

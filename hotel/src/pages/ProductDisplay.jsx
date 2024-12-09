@@ -3,12 +3,16 @@ import { FaPhoneAlt } from "react-icons/fa";
 import { CiLocationOn } from "react-icons/ci";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { FaTimes } from "react-icons/fa";
-import { useEffect, useState } from "react";
+import { Children, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { FaRegArrowAltCircleLeft } from "react-icons/fa";
 import { FaRegArrowAltCircleRight } from "react-icons/fa";
 import { FaCaretDown } from "react-icons/fa";
 import ImageArray from "../components/ImageArray";
+import { FaBed } from "react-icons/fa";
+import { FaWifi } from "react-icons/fa";
+import { ImSpoonKnife } from "react-icons/im";
+import { PaystackButton } from "react-paystack";
 // import RoomRateArray from "../components/RoomRateArray";
 import { useNavigate } from "react-router-dom";
 export default function ProductDisplay() {
@@ -20,7 +24,7 @@ export default function ProductDisplay() {
     navigate("/product", { state: { placeholder: id } });
     window.scrollTo(0, 0);
   };
-  console.log(check);
+
   // const [saveme, setSaveme] = useState({});
 
   // useEffect(() => {
@@ -99,11 +103,13 @@ export default function ProductDisplay() {
   };
 
   const number = check?.placeholder.headingSix.split(" ")[0];
+  const changeNumber = number.split("₦")[1].replace(",", "");
+
   const dropdownNumber = [1, 2, 3, 4];
   const [receive, setReceive] = useState({
-    first: "",
-    second: "",
-    third: "",
+    adult: "",
+    children: "",
+    room: "",
   });
 
   const handleNumber = (id) => {
@@ -111,7 +117,7 @@ export default function ProductDisplay() {
       if (item === id) {
         setReceive((prev) => ({
           ...prev,
-          first: item,
+          adult: item,
         }));
       }
     });
@@ -121,7 +127,7 @@ export default function ProductDisplay() {
       if (item === id) {
         setReceive((prev) => ({
           ...prev,
-          second: item,
+          children: item,
         }));
       }
     });
@@ -132,7 +138,7 @@ export default function ProductDisplay() {
       if (item === id) {
         setReceive((prev) => ({
           ...prev,
-          third: item,
+          room: item,
         }));
       }
     });
@@ -212,9 +218,26 @@ export default function ProductDisplay() {
     e.prevenDefault();
   };
 
-  // const save = [input, receive];
-  // console.log(save);
-  // console.log(receive);
+  const departureDate = new Date(input.departure);
+  const arrivalDate = new Date(input.arrival);
+
+  const totalNights = Math.ceil(
+    (departureDate.getTime() - arrivalDate.getTime()) / (1000 * 3600 * 24)
+  );
+
+  const night = Number(changeNumber * totalNights);
+
+  const amount = night * Number(receive.room);
+
+  const save = {
+    input: input,
+    receive: receive,
+    roomAmount: night,
+    totalNight: totalNights,
+    totalPrices: amount,
+    roomName: check?.placeholder?.heading,
+  };
+
   const [newObj, setNewObj] = useState();
 
   useEffect(() => {
@@ -224,8 +247,11 @@ export default function ProductDisplay() {
 
     setNewObj(roomFactcheck);
   }, []);
-  // console.log(newObj);
 
+  const handleleAnotherNavigate = () => {
+    navigate("/payment", { state: { newbookingDetails: save } });
+  };
+  console.log(save);
   return (
     <>
       <div className="heading-hero">
@@ -317,7 +343,7 @@ export default function ProductDisplay() {
         <div className="paying">
           <img src="/images/logo.png" alt="logo" />
           <div className="text-center">
-            <p>STARTING FROM</p>
+            <p className="pa">STARTING FROM</p>
             <h1>{number}</h1>
             <p className="nighty">/night</p>
           </div>
@@ -343,7 +369,7 @@ export default function ProductDisplay() {
           <div className="client-detail">
             <div className="label-alike">Adult</div>
             <div className="arrival-number" onClick={handleShowUp}>
-              <div className="reall-number">{receive.first}</div>
+              <div className="reall-number">{receive.adult}</div>
               <div className="number-icon">
                 <FaCaretDown />
               </div>
@@ -359,7 +385,7 @@ export default function ProductDisplay() {
           <div className="client-detail">
             <div className="label-alike">children</div>
             <div className="arrival-number" onClick={handleShowUp2}>
-              <div className="reall-number">{receive.second}</div>
+              <div className="reall-number">{receive.children}</div>
               <div className="number-icon">
                 <FaCaretDown />
               </div>
@@ -374,7 +400,7 @@ export default function ProductDisplay() {
           <div className="client-detail">
             <div className="label-alike">Rooms</div>
             <div className="arrival-number" onClick={handleShowUp3}>
-              <div className="reall-number">{receive.third}</div>
+              <div className="reall-number">{receive.room}</div>
               <div className="number-icon">
                 <FaCaretDown />
               </div>
@@ -386,7 +412,11 @@ export default function ProductDisplay() {
               {numss}
             </div>
           </div>
-          <button type="submit" className="bookie">
+          <button
+            type="submit"
+            className="bookie"
+            onClick={handleleAnotherNavigate}
+          >
             BOOK NOW
           </button>
         </div>
@@ -461,15 +491,36 @@ export default function ProductDisplay() {
           </div>
         </div>
       </div>
+
       <div className="another-section">
         {newObj?.map((item, index) => {
           return (
             <div className="sections" key={index}>
-              <img src={item.image[0]} alt="image" />
+              <img
+                src={item.image[0]}
+                alt="image"
+                onClick={() => handleOnclick(item)}
+              />
               <h1>{item.name}</h1>
-              <p>Kingsize</p>
-              <p>Wifi</p>
-              <p>Breakfast</p>
+              <div className="icons-flex">
+                <div className="iconss">
+                  <FaBed />
+                </div>
+                <p>Kingsize</p>
+              </div>
+              <div className="icons-flex">
+                <div className="iconss">
+                  <FaWifi />
+                </div>
+                <p>Wifi</p>
+              </div>
+              <div className="icons-flex">
+                <div className="iconss">
+                  <ImSpoonKnife />
+                </div>
+                <p>Breakfast</p>
+              </div>
+
               <button onClick={() => handleOnclick(item)}>View Details</button>
             </div>
           );

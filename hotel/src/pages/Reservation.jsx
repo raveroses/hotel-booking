@@ -33,11 +33,11 @@ export default function Reservation({ newArry }) {
     setReveal(false);
   };
 
-  const [newValue, setNewValue] = useState("");
   const navigate = useNavigate();
 
   const handleNav = (index) => {
     const selectedRoom = BookingArray[index];
+
     navigate("/payment", {
       state: {
         room: selectedRoom,

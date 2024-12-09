@@ -12,7 +12,16 @@ export default function Payment({ newArry }) {
   const [dater, setDater] = useState(new Date(newArry.arrival));
 
   const location = useLocation();
-  const { room, bookingDetails } = location.state || {};
+  const { room, newbookingDetails } = location.state || {};
+  console.log(newbookingDetails);
+  // console.log(newbookingDetails?.nightPrice);
+  // console.log(newbookingDetails?.receive?.room);
+  // console.log(newbookingDetails?.receive.adult);
+  // console.log(newbookingDetails?.totalPrices);
+  const [stubborn, setStubborn] = useState({
+    one: newbookingDetails?.receive.room,
+    two: newbookingDetails?.receive.adult,
+  });
 
   const handleScroll = () => {
     if (window.scrollY > 30) {
@@ -45,11 +54,12 @@ export default function Payment({ newArry }) {
 
   const price = Number(room?.price.replace(/,/g, "")); // Remove commas
   const totalPrice = price * totalNights;
+  const realTotalPrice = totalPrice * newArry?.numbers;
 
   const formattedPrice = new Intl.NumberFormat("en-NG", {
     style: "currency",
     currency: "NGN",
-  }).format(totalPrice);
+  }).format(realTotalPrice || newbookingDetails?.totalPrices);
 
   const [detail, setDetail] = useState({
     firstname: "",
@@ -79,10 +89,14 @@ export default function Payment({ newArry }) {
     const { name, value } = e.target;
     setDetail((prev) => ({ ...prev, [name]: value }));
   };
+  const newprice = newbookingDetails?.roomAmount * 100;
+  const newprice2 = newbookingDetails?.nightPrice * 100;
+  console.log(newprice2);
+
   const publicKey = "pk_test_f008b74aed3b3e38328034093253b85eaa8628a6";
   const componentProps = {
     email: detail.email,
-    amount: totalPrice * 100,
+    amount: totalPrice * 100 || newprice || newprice2,
     metadata: {
       firstname: detail.firstname,
       lastname: detail.lastname,
@@ -176,39 +190,43 @@ export default function Payment({ newArry }) {
             <hr />
             <div className="check-in">
               <p>Check-in</p>
-              <h5>{newArry.arrival}</h5>
+              <h5>{newArry?.arrival || newbookingDetails?.input?.arrival}</h5>
             </div>
             <div className="check-out">
               <p>Check-out</p>
-              <h5>{newArry.departure}</h5>
+              <h5>
+                {newArry?.departure || newbookingDetails?.input?.departure}
+              </h5>
             </div>
             <div className="total-night">
               <p>Total Night</p>
-              <h5> {totalNights}</h5>
+              <h5> {totalNights || newbookingDetails?.totalNight}</h5>
             </div>
             <div className="total-guest">
               <p>Total-Guest</p>
-              <h5> {newArry.number}</h5>
+              <h5> {newArry?.number || stubborn?.one || "yyyyy"}</h5>
             </div>
             <div className="childrens">
               <p>Children</p>
-              <h5>{newArry.numberss}</h5>
+              <h5>
+                {newArry?.numberss || newbookingDetails?.receive?.children}
+              </h5>
             </div>
           </div>
           <div className="flexxing-two">
             <h4>Selected Room</h4>
-            <h3>Standard</h3>
+            <h3>{room?.hkn || newbookingDetails?.roomName}</h3>
             <div className="check-in">
               <p>Rooms</p>
-              <h5>{newArry.numbers}</h5>
+              <h5>{newArry?.numbers || stubborn.two || "ggg"}</h5>
             </div>
             <div className="check-in">
               <p>Amounts</p>
-              <h5>₦{room?.price}</h5>
+              <h5>₦{room?.price || newbookingDetails?.roomAmount}</h5>
             </div>
             <div className="check-in">
               <p>Number of Days:</p>
-              <h5>{numberOfDays}</h5>
+              <h5>{numberOfDays || newbookingDetails?.totalNight + 1}</h5>
             </div>
           </div>
           <div className="total-booking">
