@@ -5,7 +5,7 @@ import { FaTimes } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate, Link } from "react-router-dom";
 
-export default function ProductDisplay2() {
+export default function Pro() {
   const [show, setShow] = useState(false);
 
   const handleScroll = () => {
