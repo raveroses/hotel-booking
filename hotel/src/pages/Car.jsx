@@ -91,7 +91,7 @@ export default function Car() {
                 <Link to="/car">Car Hire</Link>
               </li>
               <li>
-                <Link to="/room">Halls</Link>
+                <Link to="/hall">Halls</Link>
               </li>
               <li>
                 <Link to="/contact">Contact us</Link>
@@ -108,7 +108,7 @@ export default function Car() {
                 <Link to="/car">Car Hire</Link>
               </li>
               <li>
-                <Link to="/room">Halls</Link>
+                <Link to="/hall">Halls</Link>
               </li>
               <li>
                 <Link to="/contact">Contact us</Link>

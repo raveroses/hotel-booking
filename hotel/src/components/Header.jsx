@@ -160,19 +160,19 @@ export default function Header({
               />
               <ul style={{ display: burger ? "block" : "none" }}>
                 <li>
-                  <a href="/"> Home</a>
+                  <Link to="/"> Home</Link>
                 </li>
                 <li>
-                  <a href="/room">Rooms & Rate</a>
+                  <Link to="/room">Rooms & Rate</Link>
                 </li>
                 <li>
-                  <a href="">Car Hire</a>
+                  <Link to="/car">Car Hire</Link>
                 </li>
                 <li>
-                  <a href="">Halls</a>
+                  <Link to="/hall">Halls</Link>
                 </li>
                 <li>
-                  <a href="">Contact Us</a>
+                  <Link to="/contact">contact</Link>
                 </li>
               </ul>
             </div>
