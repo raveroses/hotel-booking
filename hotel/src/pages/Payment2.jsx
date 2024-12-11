@@ -114,7 +114,7 @@ export default function Payment2() {
                 <Link to="/car">Car Hire</Link>
               </li>
               <li>
-                <Link to="/room">Halls</Link>
+                <Link to="/hall">Halls</Link>
               </li>
               <li>
                 <Link to="/contact">Contact us</Link>
@@ -131,7 +131,7 @@ export default function Payment2() {
                 <Link to="/car">Car Hire</Link>
               </li>
               <li>
-                <Link to="/room">Halls</Link>
+                <Link to="/hall">Halls</Link>
               </li>
               <li>
                 <Link to="/contact">Contact us</Link>
@@ -173,7 +173,7 @@ export default function Payment2() {
               <p>Name</p>
               <h5>
                 {" "}
-                {inputs.fullname.toLowerCase() || input.fullname.toLowerCase()}
+                {(inputs?.fullname || input?.fullname || "Guest").toLowerCase()}
               </h5>
             </div>
             <div className="childrens">

@@ -2134,6 +2134,8 @@ footer {
   }
   .flexxing {
     padding: 20px 10px;
+    width: 100%;
+    max-width: 100%;
   }
 
   .flexxing-one {
@@ -2174,19 +2176,19 @@ footer {
 
   .first-name input {
     width: 100%;
-    padding: 10px;
+    padding: 10px 49px;
     border: 2px solid gray;
     outline: none;
   }
   .last-name input {
     width: 100%;
-    padding: 10px;
+    padding: 10px 49px;
     border: 2px solid gray;
     outline: none;
   }
   .addresso input {
     width: 100%;
-    padding: 10px;
+    padding: 10px 29px;
     border: 2px solid gray;
     outline: none;
   }
@@ -2194,7 +2196,7 @@ footer {
   .email input,
   .phone input {
     width: 100%;
-    padding: 10px;
+    padding: 10px 49px;
     border: 2px solid gray;
     outline: none;
   }
@@ -2404,5 +2406,54 @@ footer {
   }
   .writeup h1 {
     font-size: 22px;
+  }
+  .car-flex {
+    flex-direction: column;
+    margin: 10px;
+  }
+  .car-image img {
+    width: 100%;
+    max-width: 100%;
+  }
+  .writeup h1 {
+    font-size: 20px;
+    color: rgb(142, 112, 55);
+  }
+  .real-writeup {
+    font-size: 15px;
+  }
+  .writeup button {
+    padding: 10px 13px;
+  }
+  .display-flexs {
+    flex-direction: column;
+  }
+  .car-hire {
+    margin: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .carname {
+    border-left: none;
+    border-top: 2px solid rgb(142, 112, 55);
+    padding-left: 0px;
+  }
+  .carname h2 {
+    padding-top: 30px;
+    padding-bottom: 4px;
+    font-size: 15px;
+    text-transform: uppercase;
+  }
+  .sep {
+    font-weight: 700;
+    font-size: 16px;
+    margin: 0px 10px;
+    text-transform: uppercase;
+    padding-bottom: 102px;
+  }
+  .carname p {
+    font-size: 13px;
+    line-height: 1.5rem;
   }
 }
