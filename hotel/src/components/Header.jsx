@@ -125,19 +125,19 @@ export default function Header({
               <GiHamburgerMenu className="burger" />
               <ul>
                 <li>
-                  <a href=""> Home</a>
+                  <Link to="/">Home</Link>
                 </li>
                 <li>
-                  <Link to="/room">Rooms & Ratek</Link>
+                  <Link to="/room">Rooms & Rate</Link>
                 </li>
                 <li>
-                  <a href="">Car Hire</a>
+                  <Link to="/car">Car Hire</Link>
                 </li>
                 <li>
-                  <a href="">Halls</a>
+                  <Link to="/room">Halls</Link>
                 </li>
                 <li>
-                  <a href="">Contact Us</a>
+                  <Link to="/contact">Contact us</Link>
                 </li>
               </ul>
             </div>

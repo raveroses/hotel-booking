@@ -3,7 +3,7 @@ import { CiLocationOn } from "react-icons/ci";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { FaTimes } from "react-icons/fa";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 export default function Car() {
   const [show, setShow] = useState(false);
@@ -82,36 +82,36 @@ export default function Car() {
             </div>
             <ul style={{ display: reveal ? "block" : "none" }}>
               <li>
-                <a href=""> Home</a>
+                <Link to="/">Home</Link>
               </li>
               <li>
-                <a href="">Rooms & Rate</a>
+                <Link to="/room">Rooms & Rate</Link>
               </li>
               <li>
-                <a href="">Car Hire</a>
+                <Link to="/car">Car Hire</Link>
               </li>
               <li>
-                <a href="">Halls</a>
+                <Link to="/room">Halls</Link>
               </li>
               <li>
-                <a href="">Contact Us</a>
+                <Link to="/contact">Contact us</Link>
               </li>
             </ul>
             <ul className="ul">
               <li>
-                <a href=""> Home</a>
+                <Link to="/">Home</Link>
               </li>
               <li>
-                <a href="">Rooms & Rate</a>
+                <Link to="/room">Rooms & Rate</Link>
               </li>
               <li>
-                <a href="">Car Hire</a>
+                <Link to="/car">Car Hire</Link>
               </li>
               <li>
-                <a href="">Halls</a>
+                <Link to="/room">Halls</Link>
               </li>
               <li>
-                <a href="">Contact Us</a>
+                <Link to="/contact">Contact us</Link>
               </li>
             </ul>
           </div>

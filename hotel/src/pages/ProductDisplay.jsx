@@ -285,30 +285,30 @@ export default function ProductDisplay() {
                 <Link to="/room">Rooms & Rate</Link>
               </li>
               <li>
-                <a href="">Car Hire</a>
+                <a href="/car">Car Hire</a>
               </li>
               <li>
-                <a href="">Halls</a>
+                <a href="/hall">Halls</a>
               </li>
               <li>
-                <a href="">Contact Us</a>
+                <a href="/contact">Contact Us</a>
               </li>
             </ul>
             <ul className="ul">
               <li>
-                <Link to="/">Hotel</Link>
+                <Link to="/">Home</Link>
               </li>
               <li>
                 <Link to="/room">Rooms & Rate</Link>
               </li>
               <li>
-                <a href="">Car Hire</a>
+                <Link to="/car">Car Hire</Link>
               </li>
               <li>
-                <a href="">Halls</a>
+                <Link to="/hall">Halls</Link>
               </li>
               <li>
-                <a href="">Contact Us</a>
+                <Link to="/contact">contacts</Link>
               </li>
             </ul>
           </div>

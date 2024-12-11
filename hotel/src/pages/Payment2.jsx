@@ -1,9 +1,10 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import { FaPhoneAlt } from "react-icons/fa";
 import { CiLocationOn } from "react-icons/ci";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { FaTimes } from "react-icons/fa";
 import { useEffect, useState } from "react";
+import { PaystackButton } from "react-paystack";
 export default function Payment2() {
   const [show, setShow] = useState(false);
 
@@ -33,7 +34,6 @@ export default function Payment2() {
 
   const location = useLocation();
   const { idCollection, inputs } = location?.state || {};
-  console.log(idCollection, inputs);
 
   const [input, setInput] = useState({
     arrival: "",
@@ -49,7 +49,35 @@ export default function Payment2() {
   const handleSubmission = (e) => {
     e.preventDefault();
   };
-  console.log(input);
+
+  const FromDate = new Date(inputs?.arrival);
+  const ToDate = new Date(inputs?.departure);
+  const totalDate = ToDate.getDate() - FromDate.getDate();
+
+  const price = idCollection?.para.split("₦")[1]?.split(" ")[0];
+
+  const changePrice = Number(price.replace(",", "") * totalDate);
+  const formattedPrice = new Intl.NumberFormat("en-NG", {
+    style: "currency",
+    currency: "NGN",
+  }).format(changePrice);
+
+  const publicKey = "pk_test_f008b74aed3b3e38328034093253b85eaa8628a6";
+  const componentProps = {
+    email: inputs.email,
+    amount: changePrice * 100,
+    metadata: {
+      fullname: inputs.firstname,
+      phoneNumber: inputs.number,
+    },
+    publicKey,
+    text: "PLACE ORDER",
+    onSuccess: () =>
+      alert("Thanks for doing business with us! Come back soon!!"),
+    onClose: () =>
+      alert("Wait! Don't leave , Your Transaction is on processing :("),
+  };
+
   return (
     <>
       <div className="heading-hero">
@@ -77,36 +105,36 @@ export default function Payment2() {
             </div>
             <ul style={{ display: reveal ? "block" : "none" }}>
               <li>
-                <a href=""> Home</a>
+                <Link to="/">Home</Link>
               </li>
               <li>
-                <a href="">Rooms & Rate</a>
+                <Link to="/room">Rooms & Rate</Link>
               </li>
               <li>
-                <a href="">Car Hire</a>
+                <Link to="/car">Car Hire</Link>
               </li>
               <li>
-                <a href="">Halls</a>
+                <Link to="/room">Halls</Link>
               </li>
               <li>
-                <a href="">Contact Us</a>
+                <Link to="/contact">Contact us</Link>
               </li>
             </ul>
             <ul className="ul">
               <li>
-                <a href=""> Home</a>
+                <Link to="/">Home</Link>
               </li>
               <li>
-                <a href="">Rooms & Rate</a>
+                <Link to="/room">Rooms & Rate</Link>
               </li>
               <li>
-                <a href="">Car Hire</a>
+                <Link to="/car">Car Hire</Link>
               </li>
               <li>
-                <a href="">Halls</a>
+                <Link to="/room">Halls</Link>
               </li>
               <li>
-                <a href="">Contact Us</a>
+                <Link to="/contact">Contact us</Link>
               </li>
             </ul>
           </div>
@@ -139,7 +167,7 @@ export default function Payment2() {
             </div>
             <div className="total-night">
               <p>Total Days</p>
-              <h5> 11</h5>
+              <h5> {totalDate}</h5>
             </div>
             <div className="total-guest">
               <p>Name</p>
@@ -161,16 +189,16 @@ export default function Payment2() {
             <hr />
             <div className="total-guest">
               <p>Amount:</p>
-              <h5> #100001</h5>
+              <h5> {`₦ ${price}`}</h5>
             </div>
             <div className="childrens">
               <p>Number of Days:</p>
-              <h5>312</h5>
+              <h5>{totalDate}</h5>
             </div>
           </div>
           <div className="total-booking">
             <div className="tot">TOTAL</div>
-            <div className="priccce">11000</div>
+            <div className="priccce">{formattedPrice}</div>
           </div>
         </div>
         <div className="flex-payment">
@@ -249,7 +277,7 @@ export default function Payment2() {
               </div>
             </div>
             <div className="place-order">
-              <button>pay now</button>
+              <PaystackButton {...componentProps} />
             </div>
           </form>
         </div>

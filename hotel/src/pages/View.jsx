@@ -129,30 +129,30 @@ export default function View() {
                 <Link to="/room">Rooms & Rate</Link>
               </li>
               <li>
-                <a href="">Car Hire</a>
+                <Link to="/car">Car Hire</Link>
               </li>
               <li>
-                <a href="">Halls</a>
+                <Link to="/hall">Halls</Link>
               </li>
               <li>
-                <a href="">Contact Us</a>
+                <Link to="/contact">contact</Link>
               </li>
             </ul>
             <ul className="ul">
               <li>
-                <Link to="/">Hotel</Link>
+                <Link to="/"> Home</Link>
               </li>
               <li>
                 <Link to="/room">Rooms & Rate</Link>
               </li>
               <li>
-                <a href="">Car Hire</a>
+                <Link to="/car">Car Hire</Link>
               </li>
               <li>
-                <a href="">Halls</a>
+                <Link to="/hall">Halls</Link>
               </li>
               <li>
-                <a href="">Contact Us</a>
+                <Link to="/contact">contact</Link>
               </li>
             </ul>
           </div>
