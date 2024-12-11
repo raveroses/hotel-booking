@@ -9,7 +9,7 @@ import View from "./pages/View";
 import RoomRate from "./pages/RoomRate";
 import ProductDisplay from "./pages/ProductDisplay";
 import Car from "./pages/Car";
-import ProductDisplay2 from "./pages/productDisplay2";
+import ProductDisplay2 from "./pages/Pro";
 import Payment2 from "./pages/Payment2";
 
 function App() {
