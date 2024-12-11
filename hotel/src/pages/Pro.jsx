@@ -102,6 +102,23 @@ export default function Pro() {
                 <Link to="/contact">Contact us</Link>
               </li>
             </ul>
+            <ul className="ul">
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/room">Rooms & Rate</Link>
+              </li>
+              <li>
+                <Link to="/car">Car Hire</Link>
+              </li>
+              <li>
+                <Link to="/hall">Halls</Link>
+              </li>
+              <li>
+                <Link to="/contact">Contact us</Link>
+              </li>
+            </ul>
           </div>
         </div>
 

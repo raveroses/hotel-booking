@@ -9,7 +9,7 @@ import View from "./pages/View";
 import RoomRate from "./pages/RoomRate";
 import ProductDisplay from "./pages/ProductDisplay";
 import Car from "./pages/Car";
-import ProductDisplay2 from "./pages/Pro";
+import Pro from "./pages/Pro";
 import Payment2 from "./pages/Payment2";
 
 function App() {
@@ -112,7 +112,7 @@ function App() {
           <Route path="/room" element={<RoomRate />} />
           <Route path="/product" element={<ProductDisplay />} />
           <Route path="/car" element={<Car />} />
-          <Route path="/product2" element={<ProductDisplay2 />} />
+          <Route path="/product2" element={<Pro />} />
           <Route path="/payment2" element={<Payment2 />} />
         </Routes>
         <Footer />
