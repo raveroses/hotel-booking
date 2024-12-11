@@ -3,7 +3,7 @@ import { FaPhoneAlt } from "react-icons/fa";
 import { CiLocationOn } from "react-icons/ci";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { FaTimes } from "react-icons/fa";
-import { Children, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { FaRegArrowAltCircleLeft } from "react-icons/fa";
 import { FaRegArrowAltCircleRight } from "react-icons/fa";
@@ -12,7 +12,7 @@ import ImageArray from "../components/ImageArray";
 import { FaBed } from "react-icons/fa";
 import { FaWifi } from "react-icons/fa";
 import { ImSpoonKnife } from "react-icons/im";
-import { PaystackButton } from "react-paystack";
+
 // import RoomRateArray from "../components/RoomRateArray";
 import { useNavigate } from "react-router-dom";
 export default function ProductDisplay() {

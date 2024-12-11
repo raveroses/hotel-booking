@@ -1,14 +1,16 @@
 import "./index.css";
-
 import Home from "./pages/Home";
 import Footer from "./components/Footer";
 import { useState } from "react";
 import Reservation from "./pages/Reservation";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Payment from "./components/Payment";
+import Payment from "./pages/Payment";
 import View from "./pages/View";
 import RoomRate from "./pages/RoomRate";
 import ProductDisplay from "./pages/ProductDisplay";
+import Car from "./pages/Car";
+import ProductDisplay2 from "./pages/productDisplay2";
+import Payment2 from "./pages/Payment2";
 
 function App() {
   const numberArray = [
@@ -109,6 +111,9 @@ function App() {
           <Route path="/view" element={<View />} />
           <Route path="/room" element={<RoomRate />} />
           <Route path="/product" element={<ProductDisplay />} />
+          <Route path="/car" element={<Car />} />
+          <Route path="/product2" element={<ProductDisplay2 />} />
+          <Route path="/payment2" element={<Payment2 />} />
         </Routes>
         <Footer />
       </BrowserRouter>
