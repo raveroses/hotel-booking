@@ -11,6 +11,7 @@ import ProductDisplay from "./pages/ProductDisplay";
 import Car from "./pages/Car";
 import Pro from "./pages/Pro";
 import Payment2 from "./pages/Payment2";
+import Hall from "./pages/Hall";
 
 function App() {
   const numberArray = [
@@ -114,6 +115,7 @@ function App() {
           <Route path="/car" element={<Car />} />
           <Route path="/product2" element={<Pro />} />
           <Route path="/payment2" element={<Payment2 />} />
+          <Route path="/hall" element={<Hall />} />
         </Routes>
         <Footer />
       </BrowserRouter>
