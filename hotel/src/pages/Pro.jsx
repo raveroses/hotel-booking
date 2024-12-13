@@ -4,7 +4,9 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { FaTimes } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate, Link } from "react-router-dom";
-
+import { FaRegArrowAltCircleLeft } from "react-icons/fa";
+import { FaRegArrowAltCircleRight } from "react-icons/fa";
+import HallArray from "../components/HallArray";
 export default function Pro() {
   const [show, setShow] = useState(false);
 
@@ -33,9 +35,11 @@ export default function Pro() {
   };
 
   const location = useLocation();
-  const { idCollection } = location?.state || {};
+  const { idCollection, idholder } = location?.state || {};
+  console.log(idholder);
   const price = idCollection?.para.split(" ")[0];
 
+  console.log(idholder?.image);
   const [input, setInput] = useState({
     arrival: "",
     departure: "",
@@ -57,9 +61,61 @@ export default function Pro() {
   const navigate = useNavigate();
   const handlePassObject = () => {
     navigate("/payment2", {
-      state: { inputs: input, idCollection: idCollection },
+      state: { inputs: input, idCollection: idCollection, idholder: idholder },
     });
   };
+  const [number, setNumber] = useState(0);
+  const bigImage = idholder?.image[number];
+
+  const smalImagesEffect = (id) => {
+    setNumber(id);
+  };
+
+  const handleNext = () => {
+    if (number < idholder?.image.length - 1) {
+      setNumber((prev) => prev + 1);
+    } else {
+      setNumber(0);
+    }
+  };
+
+  const handPrev = () => {
+    if (number > 0) {
+      setNumber((prev) => prev - 1);
+    } else {
+      setNumber(idholder?.image.length - 1);
+    }
+  };
+
+  const smalImages = idholder?.image?.map((item, index) => {
+    return (
+      <div
+        className="small-images another-one"
+        key={index}
+        onClick={() => smalImagesEffect(index)}
+      >
+        <img src={idCollection?.image || item} alt="small-image" />
+      </div>
+    );
+  });
+  const price2 = idholder?.price?.split(" ")[0];
+  const handleNavigate = (id) => {
+    navigate("/product2", { state: { idholder: id } });
+  };
+  const filtering = HallArray?.filter((item) => item?.name !== idholder?.name);
+
+  const filterMap = filtering?.map((item, index) => {
+    return (
+      <div className="filter-container" key={index}>
+        <div className="filter-image">
+          <img src={item?.image[0]} alt="" />
+        </div>
+        <div className="filter-name">{item?.name}</div>
+        <div className="capacity"> {item?.fouth}</div>
+        <button onClick={() => handleNavigate(item)}>View All</button>
+      </div>
+    );
+  });
   return (
     <>
       <div className="heading-hero">
@@ -128,14 +184,29 @@ export default function Pro() {
       </div>
 
       <div className="display-flexs">
-        <div className="image">
-          <img src="images/car.jpg" alt="car-image" />
+        <div>
+          <div className="image">
+            <div className="prevv" onClick={handPrev}>
+              <FaRegArrowAltCircleLeft />
+            </div>
+            <div className="big-image">
+              {" "}
+              <img src={idCollection?.image || bigImage} alt="car-image" />
+            </div>
+            <div className="nexts" onClick={handleNext}>
+              <FaRegArrowAltCircleRight />
+            </div>
+          </div>
+
+          {smalImages}
         </div>
         <div className="paying">
           <img src="/images/logo.png" alt="logo" />
           <div className="text-center">
-            <p className="pa">STARTING FROM</p>
-            <h1>{price}</h1>
+            <p className="pa">
+              {(idholder?.name || "STARTING FROM").toUpperCase()}
+            </p>
+            <h1>{price || price2}</h1>
             <p className="nighty">/day</p>
           </div>
           <hr />
@@ -185,15 +256,20 @@ export default function Pro() {
               id="telephone"
               required
             />
-            <label htmlFor="roomNumber"> Room Number</label>
-            <input
-              type="text"
-              name="roomNumber"
-              value={input.roomNumber}
-              onChange={handleOnChange}
-              id="roomNumber"
-              required
-            />
+            {idholder !== "undefined" ||
+              (idCollection !== "undefined" && (
+                <>
+                  <label htmlFor="roomNumber">Room Number</label>
+                  <input
+                    type="text"
+                    name="roomNumber"
+                    value={input.roomNumber}
+                    onChange={handleOnChange}
+                    id="roomNumber"
+                    required
+                  />
+                </>
+              ))}
             <button type="submit" className="bookie" onClick={handlePassObject}>
               BOOK NOW
             </button>
@@ -204,12 +280,32 @@ export default function Pro() {
       <div className="car-hire">
         <div className="descrip"> Description</div>
 
-        <div className="carname">
-          <h2>Toyota Land Cruiser 2023</h2>
-          <p>This is a perfect car for today and tomorow guest</p>
-        </div>
+        {idCollection && (
+          <div className="carname">
+            <h2>{"Toyota Land Cruiser 2023"}</h2>
+            <p>This is a perfect car for today and tomorow guest</p>
+          </div>
+        )}
+        {idholder && (
+          <div className="carname">
+            <h2>{idholder?.name}</h2>
+            <ul>
+              <li>{idholder?.firstLi}</li>
+              <li>{idholder?.secondLi}</li>
+            </ul>
+          </div>
+        )}
       </div>
-      <div className="sep">These might also interest you!</div>
+      {idCollection && (
+        <div className="sep">These might also interest you!</div>
+      )}
+
+      {idholder && (
+        <div className="hotels-heading">
+          <h5>Another Halls</h5>
+          <div className="mother">{filterMap}</div>
+        </div>
+      )}
     </>
   );
 }

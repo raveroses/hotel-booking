@@ -1569,6 +1569,46 @@ footer {
   background-color: white;
   color: rgb(142, 112, 55);
 }
+
+.big-image img {
+  width: 850px;
+  height: 500px;
+}
+.mother {
+  display: flex;
+  justify-content: flex-start;
+  gap: 50px;
+  align-items: flex-start;
+}
+.hotels-heading {
+  margin: 50px;
+}
+.filter-image img {
+  width: 250px;
+  height: 100px;
+}
+.filter-name {
+  font-size: 22px;
+  font-weight: 700;
+}
+.capacity {
+  font-size: 15px;
+  font-style: italic;
+}
+.hotels-heading button {
+  border: 2px solid black;
+  padding: 7px 20px;
+  margin-top: 10px;
+  text-transform: uppercase;
+  font-size: 10px;
+  font-weight: 600;
+}
+.hotels-heading h5 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
 @media (max-width: 480px) {
   .logo-palace {
     display: block;

@@ -3,7 +3,7 @@ import { CiLocationOn } from "react-icons/ci";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { FaTimes } from "react-icons/fa";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import HallArray from "../components/HallArray";
 export default function Hall() {
   const [show, setShow] = useState(false);
@@ -31,13 +31,16 @@ export default function Hall() {
   const handleCancel = () => {
     setReveal(false);
   };
-
+  const navigate = useNavigate();
+  const handleNavigate = (id) => {
+    navigate("/product2", { state: { idholder: id } });
+  };
   const hall = HallArray.map((item, index) => {
     return (
       <div className="hall-image" key={index}>
         <div
           className="first-image"
-          style={{ backgroundImage: `url(${item.image})` }}
+          style={{ backgroundImage: `url(${item.image[0]})` }}
         >
           <div className="first-image-content">
             <h1>{item.name} </h1>
@@ -48,7 +51,12 @@ export default function Hall() {
               <li>{item.thirdLi}</li>
               <li>{item.fouth} </li>
             </ul>
-            <button className="view-detail">VIEW DETAILS</button>
+            <button
+              className="view-detail"
+              onClick={() => handleNavigate(item)}
+            >
+              VIEW DETAILS
+            </button>
           </div>
         </div>
       </div>

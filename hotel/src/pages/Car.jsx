@@ -38,6 +38,7 @@ export default function Car() {
       para: "₦10,000 per day",
       content:
         "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. This is a perfect car for today and tomorow guest ",
+      image: "images/car.jpg",
     },
   ]);
   const navigate = useNavigate();

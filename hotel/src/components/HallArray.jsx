@@ -7,7 +7,7 @@ const HallArray = [
     thirdLi:
       "   All Guest valuables are kept in hotel safes inclusive of loss but found items.",
     fouth: " Capacity: 500",
-    image: "images/first-big-hall.jpg",
+    image: ["images/first-big-hall.jpg", "images/joy-hall.jpg"],
   },
   {
     name: "Lobby Hall",
@@ -18,7 +18,7 @@ const HallArray = [
     thirdLi:
       "   All Guest valuables are kept in hotel safes inclusive of loss but found items.",
     fouth: " Capacity: 100",
-    image: "images/pillar.jpg",
+    image: ["images/pillar.jpg", "images/lobby-2.jpg"],
   },
   {
     name: "Vic-Phranc Hall",
@@ -29,7 +29,7 @@ const HallArray = [
     thirdLi:
       "   All Guest valuables are kept in hotel safes inclusive of loss but found items.",
     fouth: " Capacity: 500",
-    image: "images/pop.jpg",
+    image: ["images/pop.jpg", "images/vic2.jpg"],
   },
   {
     name: "Ogugua Hall",
@@ -40,7 +40,7 @@ const HallArray = [
     thirdLi:
       "   All Guest valuables are kept in hotel safes inclusive of loss but found items.",
     fouth: " Capacity: 850",
-    image: "images/scanty.jpg",
+    image: ["images/scanty.jpg", "images/odo-2.jpg"],
   },
 ];
 export default HallArray;

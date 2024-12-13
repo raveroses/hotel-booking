@@ -33,8 +33,8 @@ export default function Payment2() {
   };
 
   const location = useLocation();
-  const { idCollection, inputs } = location?.state || {};
-
+  const { idCollection, inputs, idholder } = location?.state || {};
+  console.log(idholder);
   const [input, setInput] = useState({
     arrival: "",
     depart: "",
@@ -55,20 +55,22 @@ export default function Payment2() {
   const totalDate = ToDate.getDate() - FromDate.getDate();
 
   const price = idCollection?.para.split("₦")[1]?.split(" ")[0];
-
-  const changePrice = Number(price.replace(",", "") * totalDate);
+  const price2 = idholder?.price.split("₦")[1]?.split(" ")[0];
+  console.log(price2);
+  const changePrice = Number(price?.replace(",", "") * totalDate);
+  const changePrice2 = Number(price2?.replace(",", "") * totalDate);
   const formattedPrice = new Intl.NumberFormat("en-NG", {
     style: "currency",
     currency: "NGN",
-  }).format(changePrice);
+  }).format(changePrice || changePrice2);
 
   const publicKey = "pk_test_f008b74aed3b3e38328034093253b85eaa8628a6";
   const componentProps = {
-    email: inputs.email,
-    amount: changePrice * 100,
+    email: inputs?.email,
+    amount: changePrice * 100 || changePrice2 * 100,
     metadata: {
-      fullname: inputs.firstname,
-      phoneNumber: inputs.number,
+      fullname: inputs?.firstname,
+      phoneNumber: inputs?.number,
     },
     publicKey,
     text: "PLACE ORDER",
@@ -159,11 +161,11 @@ export default function Payment2() {
             <hr />
             <div className="check-in">
               <p>From</p>
-              <h5>{inputs.arrival || input.arrival}</h5>
+              <h5>{inputs?.arrival || input?.arrival}</h5>
             </div>
             <div className="check-out">
               <p>To</p>
-              <h5>{inputs.departure || input.depart}</h5>
+              <h5>{inputs?.departure || input?.depart}</h5>
             </div>
             <div className="total-night">
               <p>Total Days</p>
@@ -178,18 +180,20 @@ export default function Payment2() {
             </div>
             <div className="childrens">
               <p>Room Number</p>
-              <h5>{inputs.roomNumber || inputs.room}</h5>
+              <h5>{inputs?.roomNumber || inputs?.room}</h5>
             </div>
           </div>
           {/*  */}
           <div className="second-board">
-            <h3>HIRE FEE</h3>
+            <h3>{(idholder && "HALL RENTAL") || "HIRE FEE"}</h3>
             <hr />
-            <div className="car-title">{idCollection.heading}</div>
+            <div className="car-title">
+              {idCollection?.heading || idholder?.name}
+            </div>
             <hr />
             <div className="total-guest">
               <p>Amount:</p>
-              <h5> {`₦ ${price}`}</h5>
+              <h5> {`₦ ${price || price2}`}</h5>
             </div>
             <div className="childrens">
               <p>Number of Days:</p>
@@ -214,22 +218,24 @@ export default function Payment2() {
                   type="text"
                   id="fullname"
                   name="fullname"
-                  value={input.fullname || inputs.fullname}
+                  value={input?.fullname || inputs?.fullname}
                   onChange={handleOnchange}
                 />
               </div>
-              <div className="last-name">
-                <div>
-                  <label htmlFor="room">room number *</label>
+              {idCollection && (
+                <div className="last-name">
+                  <div>
+                    <label htmlFor="room">room number *</label>
+                  </div>
+                  <input
+                    type="text"
+                    id="room"
+                    name="room"
+                    value={input?.room || inputs?.roomNumber}
+                    onChange={handleOnchange}
+                  />
                 </div>
-                <input
-                  type="text"
-                  id="room"
-                  name="room"
-                  value={input.room || inputs.roomNumber}
-                  onChange={handleOnchange}
-                />
-              </div>
+              )}
             </div>
 
             <div className="contact">
@@ -241,7 +247,7 @@ export default function Payment2() {
                   type="email"
                   name="email"
                   id=""
-                  value={input.email || inputs.email}
+                  value={input?.email || inputs?.email}
                   onChange={handleOnchange}
                 />
               </div>
@@ -252,7 +258,7 @@ export default function Payment2() {
                 <input
                   type="text"
                   name="number"
-                  value={input.number || inputs.telephone}
+                  value={input?.number || inputs?.telephone}
                   onChange={handleOnchange}
                 />
               </div>
