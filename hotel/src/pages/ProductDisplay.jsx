@@ -43,14 +43,14 @@ export default function ProductDisplay() {
   // }, []);
   const [access, setAccess] = useState(0);
 
-  const bigImage = check.placeholder.image?.[access];
+  const bigImage = check?.placeholder?.image?.[access];
   // // console.log(bigImage);
   const handleImageChanger = (id) => {
     setAccess(id);
   };
   // // console.log(saveme.image?.length - 1);
   const handleNext = () => {
-    if (access < check.placeholder.image?.length - 1) {
+    if (access < check?.placeholder?.image?.length - 1) {
       setAccess((prev) => prev + 1);
     } else {
       setAccess(0);
@@ -61,11 +61,11 @@ export default function ProductDisplay() {
     if (access > 0) {
       setAccess((prev) => prev - 1);
     } else {
-      setAccess(check.placeholder.image?.length - 1);
+      setAccess(check?.placeholder?.image?.length - 1);
     }
   };
 
-  const chec = check.placeholder.image?.map((item, index) => {
+  const chec = check?.placeholder?.image?.map((item, index) => {
     return (
       <img
         src={item}
@@ -102,7 +102,7 @@ export default function ProductDisplay() {
     setReveal(false);
   };
 
-  const number = check?.placeholder.headingSix.split(" ")[0];
+  const number = check?.placeholder?.headingSix.split(" ")[0];
   const changeNumber = number.split("₦")[1].replace(",", "");
 
   const dropdownNumber = [1, 2, 3, 4];
@@ -113,7 +113,7 @@ export default function ProductDisplay() {
   });
 
   const handleNumber = (id) => {
-    const find = dropdownNumber.find((item) => {
+    const find = dropdownNumber?.find((item) => {
       if (item === id) {
         setReceive((prev) => ({
           ...prev,
@@ -123,7 +123,7 @@ export default function ProductDisplay() {
     });
   };
   const handleNumber2 = (id) => {
-    const find = dropdownNumber.find((item) => {
+    const find = dropdownNumber?.find((item) => {
       if (item === id) {
         setReceive((prev) => ({
           ...prev,
@@ -134,7 +134,7 @@ export default function ProductDisplay() {
   };
 
   const handleNumber3 = (id) => {
-    const find = dropdownNumber.find((item) => {
+    const find = dropdownNumber?.find((item) => {
       if (item === id) {
         setReceive((prev) => ({
           ...prev,
@@ -143,7 +143,7 @@ export default function ProductDisplay() {
       }
     });
   };
-  const num = dropdownNumber.map((item, index) => {
+  const num = dropdownNumber?.map((item, index) => {
     return (
       <div
         className="rolldown-numbers"
@@ -156,7 +156,7 @@ export default function ProductDisplay() {
       </div>
     );
   });
-  const nums = dropdownNumber.map((item, index) => {
+  const nums = dropdownNumber?.map((item, index) => {
     return (
       <div
         className="rolldown-numbers"
@@ -167,7 +167,7 @@ export default function ProductDisplay() {
       </div>
     );
   });
-  const numss = dropdownNumber.map((item, index) => {
+  const numss = dropdownNumber?.map((item, index) => {
     return (
       <div
         className="rolldown-numbers"
@@ -218,8 +218,8 @@ export default function ProductDisplay() {
     e.prevenDefault();
   };
 
-  const departureDate = new Date(input.departure);
-  const arrivalDate = new Date(input.arrival);
+  const departureDate = new Date(input?.departure);
+  const arrivalDate = new Date(input?.arrival);
 
   const totalNights = Math.ceil(
     (departureDate.getTime() - arrivalDate.getTime()) / (1000 * 3600 * 24)
@@ -227,7 +227,7 @@ export default function ProductDisplay() {
 
   const night = Number(changeNumber * totalNights);
 
-  const amount = night * Number(receive.room);
+  const amount = night * Number(receive?.room);
 
   const save = {
     input: input,
@@ -242,7 +242,7 @@ export default function ProductDisplay() {
 
   useEffect(() => {
     const roomFactcheck = ImageArray.filter((item, index) => {
-      return item.name !== check?.placeholder.heading;
+      return item.name !== check?.placeholder?.heading;
     });
 
     setNewObj(roomFactcheck);

@@ -1609,6 +1609,98 @@ footer {
   text-transform: uppercase;
   font-weight: 600;
 }
+.ico {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.ico address {
+  font-size: 15px;
+}
+
+.ico p {
+  font-size: 15px;
+}
+.ico a {
+  font-size: 15px;
+  text-decoration: none;
+}
+.ico a:hover {
+  color: black;
+}
+.iconn {
+  color: rgb(142, 112, 55);
+  font-size: 18px;
+}
+
+.first-contact h5 {
+  font-size: 30px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.first-contact p {
+  font-size: 16px;
+}
+
+.contact-flex {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 150px;
+  margin: 50px;
+}
+.second-contact form div {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 30px;
+}
+.second-contact form div input {
+  width: 270px;
+  padding: 10px 20px 10px 10px;
+  border: 2px solid black;
+}
+.second-contact form div input::placeholder {
+  font-size: 15px;
+  color: black;
+}
+
+.second-contact form .subject input {
+  width: 570px;
+  margin-top: 20px;
+  padding: 10px 20px 10px 10px;
+}
+.second-contact form .text textarea {
+  width: 570px;
+  margin-top: 20px;
+  border: 2px solid black;
+  resize: none;
+  height: 200px;
+  padding-left: 20px;
+  padding-top: 10px;
+}
+.second-contact form .text textarea::placeholder {
+  font-size: 15px;
+  color: black;
+}
+.second-contact h5 {
+  font-size: 20px;
+}
+.lastButton {
+  border: none;
+  background-color: rgb(142, 112, 55);
+  padding: 13px 60px;
+  text-align: center;
+  color: white;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 700;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
 @media (max-width: 480px) {
   .logo-palace {
     display: block;
@@ -1631,7 +1723,7 @@ footer {
     z-index: 60; /* Sticky bar */
     top: 0;
     left: 0;
-    padding: 60px 0px;
+    padding: 60px 40px;
     gap: 230px;
     opacity: 0.9;
     display: flex;
@@ -1647,6 +1739,7 @@ footer {
     background-color: black;
     padding: 20px 0px;
     opacity: 0.8;
+    z-index: 5;
   }
   .navbars ul li a {
     font-size: 11px;
@@ -1715,9 +1808,12 @@ footer {
     justify-content: flex-start;
     max-width: 100%;
     width: 100%;
-    gap: 210px;
+    gap: 223px;
+    margin: 0px 0px;
   }
-
+  .logos img {
+    width: 50px;
+  }
   .logo-partss {
     /* color: white;
     font-size: 12px; */
@@ -1729,7 +1825,7 @@ footer {
     justify-content: flex-start;
     max-width: 100%;
     width: 100%;
-    gap: 170px;
+    gap: 223px;
   }
   /* 
   .logo-parts ul li a {
@@ -1790,8 +1886,8 @@ footer {
     display: none;
   }
   .logo img {
-    width: 85px;
-    margin-left: 10px;
+    width: 50px;
+    margin-left: 30px;
   }
   .heading {
     max-width: 100%;
@@ -1807,11 +1903,17 @@ footer {
   .logo-part {
     display: none;
   }
-
+  /* 
   .carousel {
     top: 330px;
     left: 46px;
     text-align: center;
+    max-width: 100%;
+  } */
+  .carousel {
+    text-align: center;
+    left: 53px;
+    top: 293px;
     max-width: 100%;
   }
 
@@ -1857,9 +1959,14 @@ footer {
     justify-content: center;
     align-items: center;
   }
-  .arrival-input {
+  /* .arrival-input {
     width: 320px;
     padding: 7px 7px;
+    margin: 5px auto;
+  } */
+  .arrival-input {
+    width: 96%;
+    padding: 7px 11px;
     margin: 5px auto;
   }
   .arrival-flex {
@@ -1873,16 +1980,29 @@ footer {
   .arrival-content {
     font-size: 14px;
   }
-  .input-date input {
+  /* .input-date input {
     padding: 15px 89px 15px 0px;
     width: 300px;
     font-size: 20px;
     text-transform: uppercase;
+  } */
+  .input-date input {
+    padding: 15px 0px 15px 0px;
+    width: 100%;
+    max-width: 100%;
+    font-size: 20px;
+    text-transform: uppercase;
   }
-  .showing-adult {
+  /* .showing-adult {
     padding: 0px;
     width: 320px;
     margin: 7px auto;
+  } */
+  .showing-adult {
+    padding: 7px 137px;
+    width: 100%;
+    margin: 7px auto;
+    min-width: 100%;
   }
   .showing-adult h2 {
     margin-top: 0px;
@@ -1895,6 +2015,7 @@ footer {
   .roomss {
     margin-top: 599px;
     padding: 75px 7px;
+    margin: 599px 10px 0px 10px;
   }
   .our-image img {
     width: 170px;
@@ -1942,6 +2063,7 @@ footer {
   }
   .second-image {
     position: static;
+    margin: auto;
   }
   .image-collapse {
     flex-direction: column;
@@ -1952,12 +2074,7 @@ footer {
     position: relative;
     margin-left: 0px;
   }
-  .first-image {
-    margin: auto;
-  }
-  .second-image {
-    margin: auto;
-  }
+
   .image-array {
     width: 100%;
     border: 1px solid red;
@@ -1982,10 +2099,11 @@ footer {
     display: grid;
     justify-content: flex-start;
     padding: 0px 0px;
+    margin: 10px 90px;
   }
   .beed {
     margin-bottom: 20px;
-    padding-left: 74px;
+    /* padding-left: 74px; */
   }
   .icons {
     margin-bottom: 20px;
@@ -2032,10 +2150,14 @@ footer {
     background-attachment: fixed;
     background-position: center;
   }
+  .cancel {
+    margin-left: 300px;
+  }
   .modal-image {
     background-color: rgb(26, 30, 30);
-    width: 204px;
-    height: 200px;
+    width: 90%;
+    max-width: 100%;
+    height: 312px;
     position: absolute;
     top: 100px;
     left: 20px;
@@ -2047,9 +2169,9 @@ footer {
     max-width: 100%;
   }
   .imagg img {
-    width: 180px;
-    height: 60px;
-    display: none;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
   }
   .button {
     display: flex;
@@ -2072,6 +2194,7 @@ footer {
     margin: auto;
     margin-bottom: 67px;
     max-width: 100%;
+    width: 60px;
   }
   .me {
     display: block;
@@ -2354,14 +2477,14 @@ footer {
     width: 100%;
   }
   .prevv {
-    font-size: 18px;
+    font-size: 26px;
     top: 144px;
     margin-left: 10px;
   }
   .nexts {
-    font-size: 18px;
-    top: 142px;
-    margin-left: 292px;
+    font-size: 26px;
+    top: 144px;
+    margin-left: 302px;
   }
   .small-images img {
     width: 80px;
@@ -2388,7 +2511,8 @@ footer {
     font-size: 12px;
   }
   .paying input {
-    font-size: 11px;
+    font-size: 14px;
+    padding: 13px 15px;
   }
   .paying label {
     font-size: 9px;
@@ -2397,14 +2521,15 @@ footer {
     font-size: 9px;
   }
   .arrival-number {
-    padding: 1px 15px;
-    gap: 215px;
+    padding: 8px 15px;
+    gap: 171px;
     max-width: 100%;
     width: 100%;
   }
+
   .bookie {
     font-weight: 600;
-    padding: 8px;
+    padding: 14px;
     width: 100%;
     margin-top: 15px;
     max-width: 100%;
@@ -2512,6 +2637,8 @@ footer {
   }
   .display-flexs {
     flex-direction: column;
+    margin: 10px;
+    gap: 50px;
   }
   .car-hire {
     margin: 10px;
@@ -2523,12 +2650,38 @@ footer {
     border-left: none;
     border-top: 2px solid rgb(142, 112, 55);
     padding-left: 0px;
+    margin: 10px;
   }
   .carname h2 {
     padding-top: 30px;
     padding-bottom: 4px;
     font-size: 15px;
     text-transform: uppercase;
+  }
+  .carname ul li {
+    font-size: 15px;
+  }
+  .hotels-heading {
+    margin: 10px;
+  }
+  .hotels-heading h5 {
+    font-size: 18px;
+  }
+  .mother {
+    flex-direction: column;
+  }
+  .filter-image img {
+    width: 100%;
+    max-width: 100%;
+    height: 100px;
+  }
+  .filter-image img {
+    width: 396px;
+    max-width: 100%;
+    height: 122px;
+  }
+  .image {
+    max-width: 100%;
   }
   .sep {
     font-weight: 700;
@@ -2540,5 +2693,80 @@ footer {
   .carname p {
     font-size: 13px;
     line-height: 1.5rem;
+  }
+
+  .first-image {
+    margin: 10px;
+    width: 95%;
+    max-width: 100%;
+    height: 310px;
+  }
+  /* .first-image-content {
+    width: 100%;
+    padding: 10px 30px;
+  } */
+
+  .first-image-content {
+    width: 100%;
+    height: 100%;
+    padding: 10px 30px;
+  }
+  .first-image-content h1 {
+    font-size: 30px;
+  }
+  .first-image-content p {
+    font-size: 13px;
+  }
+  .first-image-content ul li {
+    font-size: 13px;
+  }
+  .big-image img {
+    height: 260px;
+  }
+  .heading-choose p {
+    font-size: 13px;
+    text-transform: capitalize;
+    margin-top: 10px;
+  }
+  .contact-flex {
+    display: flex;
+    margin: 10px;
+    flex-direction: column;
+    gap: 40px;
+  }
+  .first-contact h5 {
+    font-size: 20px;
+  }
+  .first-contact p {
+    font-size: 15px;
+  }
+  .iconn {
+    color: rgb(142, 112, 55);
+    font-size: 16px;
+  }
+  .second-contact form div {
+    gap: 14px;
+    flex-direction: column;
+  }
+  .second-contact form div input {
+    width: 100%;
+    padding: 16px 206px 16px 10px;
+    max-width: 100%;
+  }
+  .second-contact form .subject input {
+    width: 100%;
+    margin-top: 15px;
+    padding: 16px 206px 16px 10px;
+    max-width: 100%;
+  }
+
+  .second-contact form .text textarea {
+    width: 100%;
+    margin-top: 20px;
+    border: 2px solid black;
+    resize: none;
+    height: 200px;
+    padding-left: 20px;
+    padding-top: 10px;
   }
 }
