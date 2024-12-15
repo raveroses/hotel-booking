@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { CiCirclePlus } from "react-icons/ci";
 import { MdCancel } from "react-icons/md";
 import { PiCaretCircleLeftBold } from "react-icons/pi";
 import { PiCaretCircleRightBold } from "react-icons/pi";
+import { Link } from "react-router-dom";
 
 export default function Buttom() {
   const arrayImage = [
@@ -138,7 +139,7 @@ export default function Buttom() {
           style={{ display: show ? "block" : "none" }}
         ></div>
         <div className="view">
-          <a href="/view">View More</a>
+          <Link to="/view">View more</Link>
         </div>
       </div>
     </>
