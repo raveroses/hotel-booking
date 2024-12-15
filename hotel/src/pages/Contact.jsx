@@ -8,6 +8,7 @@ import { IoLocationSharp } from "react-icons/io5";
 import { CiMail } from "react-icons/ci";
 import { FaFacebookF } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
+import { useForm, ValidationError } from "@formspree/react";
 
 export default function Contact() {
   const [show, setShow] = useState(false);
@@ -35,6 +36,10 @@ export default function Contact() {
   const handleCancel = () => {
     setReveal(false);
   };
+  const [state, handleSubmit] = useForm("xjkvdqjb");
+  if (state.succeeded) {
+    return alert("Thanks for Contacting");
+  }
   return (
     <>
       <div className="heading-hero">
@@ -136,19 +141,53 @@ export default function Contact() {
         </div>
         <div className="second-contact">
           <h5>Get in touch</h5>
-          <form action="https://formspree.io/f/xjkvdqjb" method="POST">
+          <form onSubmit={handleSubmit}>
             <div>
-              <input type="text" placeholder="Name" />
+              <input type="text" placeholder="Name" id="name" name="name" />
+              <ValidationError
+                prefix="Name"
+                field="name"
+                errors={state.errors}
+              />
               <input type="email" placeholder="Email" />
+              <ValidationError
+                prefix="Email"
+                field="email"
+                errors={state.errors}
+              />
             </div>
             <div className="subject">
-              <input type="text" placeholder="Subject" />
+              <input
+                type="text"
+                placeholder="Subject"
+                id="subject"
+                name="subject"
+              />
+              <ValidationError
+                prefix="Subject"
+                field="subject"
+                errors={state.errors}
+              />
             </div>
             <div className="text">
               {" "}
-              <textarea placeholder="Write what you want"></textarea>
+              <textarea
+                placeholder="Write what you want"
+                id="message"
+              ></textarea>
+              <ValidationError
+                prefix="Message"
+                field="message"
+                errors={state.errors}
+              />
             </div>
-            <button className="lastButton">SEND</button>
+            <button
+              className="lastButton"
+              type="submit"
+              disabled={state.submitting}
+            >
+              SEND
+            </button>
           </form>
         </div>
       </div>

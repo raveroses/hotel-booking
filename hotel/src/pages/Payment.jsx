@@ -72,8 +72,7 @@ export default function Payment({ newArry }) {
     checked: false,
   });
 
-  const preventDefault = (e) => {
-    e.preventDefault();
+  const handleFprmValidation = () => {
     if (
       !detail.firstname ||
       !detail.lastname ||
@@ -81,9 +80,14 @@ export default function Payment({ newArry }) {
       !detail.checked
     ) {
       alert("Please fill out all required fields!");
-      return;
+      return false;
+    } else {
+      return true;
     }
-    setDetail("");
+  };
+  const preventDefault = (e) => {
+    e.preventDefault();
+    if (!handleFprmValidation()) return;
   };
 
   const handleOnchange = (e) => {
@@ -98,12 +102,12 @@ export default function Payment({ newArry }) {
   console.log(realTotalPrice);
   const publicKey = "pk_test_f008b74aed3b3e38328034093253b85eaa8628a6";
   const componentProps = {
-    email: detail.email,
-    amount: realTotalPrice * 100 || newbookingDetails?.totalPrices * 100,
+    email: detail.email || "No email provided",
+    amount: (realTotalPrice || newbookingDetails?.totalPrices || 0) * 100,
     metadata: {
-      firstname: detail.firstname,
-      lastname: detail.lastname,
-      phoneNumber: detail.phoneNumber,
+      firstname: detail.firstname || "No First name provided",
+      lastname: detail.lastname || "No last name provided",
+      phoneNumber: detail.phoneNumber || "No Phone number provided",
     },
     publicKey,
     text: "PLACE ORDER",

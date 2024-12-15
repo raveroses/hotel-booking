@@ -42,13 +42,23 @@ export default function Payment2() {
     email: "",
     number: "",
   });
+
   const handleOnchange = (e) => {
     const { name, value } = e.target;
     setInput((prev) => ({ ...prev, [name]: value }));
   };
 
+  const handleFormValidation = () => {
+    if (!input.arrival || !input.depart || !input.email || !input.number) {
+      alert("Please fill out all required fields before proceeding");
+      return false;
+    }
+    return true;
+  };
   const handleSubmission = (e) => {
     e.preventDefault();
+    if (!handleFormValidation()) return;
+    console.log("Proceeding with payment...");
   };
 
   const FromDate = new Date(inputs?.arrival);
@@ -66,12 +76,13 @@ export default function Payment2() {
   }).format(changePrice || changePrice2);
 
   const publicKey = "pk_test_f008b74aed3b3e38328034093253b85eaa8628a6";
+
   const componentProps = {
-    email: inputs?.email,
-    amount: changePrice * 100 || changePrice2 * 100,
+    email: inputs?.email || input?.email || "No email provided",
+    amount: (changePrice || changePrice2 || 0) * 100,
     metadata: {
-      fullname: inputs?.firstname,
-      phoneNumber: inputs?.number,
+      fullname: inputs?.fullname || input?.fullname || "No name provided",
+      phoneNumber: inputs?.number || input?.number || "No phone provided",
     },
     publicKey,
     text: "PLACE ORDER",

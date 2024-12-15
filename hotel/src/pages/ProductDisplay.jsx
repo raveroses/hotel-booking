@@ -249,7 +249,11 @@ export default function ProductDisplay() {
   }, []);
 
   const handleleAnotherNavigate = () => {
-    navigate("/payment", { state: { newbookingDetails: save } });
+    if (input.arrival && input.departure && receive.adult && receive.room) {
+      navigate("/payment", { state: { newbookingDetails: save } });
+    } else {
+      alert("Please fill out all required fields before proceeding.");
+    }
   };
   console.log(save);
   return (

@@ -55,14 +55,28 @@ export default function Pro() {
   };
 
   const handleSubmit = (e) => {
-    e.prevenDefault();
+    e.preventDefault();
   };
 
   const navigate = useNavigate();
   const handlePassObject = () => {
-    navigate("/payment2", {
-      state: { inputs: input, idCollection: idCollection, idholder: idholder },
-    });
+    if (
+      input.arrival &&
+      input.departure &&
+      input.fullname &&
+      input.email &&
+      input.telephone
+    ) {
+      navigate("/payment2", {
+        state: {
+          inputs: input,
+          idCollection: idCollection,
+          idholder: idholder,
+        },
+      });
+    } else {
+      alert("Please fill out all required fields before proceeding.");
+    }
   };
   const [number, setNumber] = useState(0);
   const bigImage = idholder?.image[number];
