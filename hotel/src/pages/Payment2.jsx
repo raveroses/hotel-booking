@@ -35,6 +35,7 @@ export default function Payment2() {
   const location = useLocation();
   const { idCollection, inputs, idholder } = location?.state || {};
   console.log(idholder);
+  console.log(idCollection);
   const [input, setInput] = useState({
     arrival: "",
     depart: "",

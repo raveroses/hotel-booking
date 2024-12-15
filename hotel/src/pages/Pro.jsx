@@ -256,20 +256,19 @@ export default function Pro() {
               id="telephone"
               required
             />
-            {idholder !== "undefined" ||
-              (idCollection !== "undefined" && (
-                <>
-                  <label htmlFor="roomNumber">Room Number</label>
-                  <input
-                    type="text"
-                    name="roomNumber"
-                    value={input.roomNumber}
-                    onChange={handleOnChange}
-                    id="roomNumber"
-                    required
-                  />
-                </>
-              ))}
+            {idCollection && (
+              <>
+                <label htmlFor="roomNumber">Room Number</label>
+                <input
+                  type="text"
+                  name="roomNumber"
+                  value={input.roomNumber}
+                  onChange={handleOnChange}
+                  id="roomNumber"
+                  required
+                />
+              </>
+            )}
             <button type="submit" className="bookie" onClick={handlePassObject}>
               BOOK NOW
             </button>

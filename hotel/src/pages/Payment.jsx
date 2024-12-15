@@ -54,6 +54,7 @@ export default function Payment({ newArry }) {
 
   const price = Number(room?.price.replace(/,/g, "")); // Remove commas
   const totalPrice = price * totalNights;
+  console.log(newbookingDetails?.totalPrices);
   const realTotalPrice = totalPrice * newArry?.numbers;
 
   const formattedPrice = new Intl.NumberFormat("en-NG", {
@@ -92,11 +93,13 @@ export default function Payment({ newArry }) {
   const newprice = newbookingDetails?.roomAmount * 100;
   const newprice2 = newbookingDetails?.nightPrice * 100;
   console.log(newprice2);
-
+  console.log(newprice);
+  console.log(newbookingDetails?.roomAmount);
+  console.log(realTotalPrice);
   const publicKey = "pk_test_f008b74aed3b3e38328034093253b85eaa8628a6";
   const componentProps = {
     email: detail.email,
-    amount: totalPrice * 100 || newprice || newprice2,
+    amount: realTotalPrice * 100 || newbookingDetails?.totalPrices * 100,
     metadata: {
       firstname: detail.firstname,
       lastname: detail.lastname,
