@@ -465,9 +465,8 @@ html {
 }
 
 .close-to-background {
-  background-image: url("images/bg-gallery.jpg");
   height: 600px;
-  background-size: cover;
+  background-color: black;
   width: 100%;
   padding: 60px 80px;
 }
