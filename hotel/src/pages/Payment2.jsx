@@ -36,6 +36,32 @@ export default function Payment2() {
   const { idCollection, inputs, idholder } = location?.state || {};
   console.log(idholder);
   console.log(idCollection);
+  console.log(inputs);
+
+  const [navigateInput, setNavigateInput] = useState({
+    arrival: inputs?.arrival,
+    departure: inputs?.departure,
+    fullname: inputs?.fullname,
+    email: inputs?.email,
+    telephone: inputs?.telephone,
+    roomNumber: inputs?.roomNumber,
+  });
+
+  const [idholders, setIdHolders] = useState({
+    firstLi: idholder?.firstLi,
+    fouth: idholder?.fouth,
+    name: idholder?.name,
+    price: idholder?.price,
+    secondLi: idholder?.secondLi,
+    thirdLi: idholder?.thirdLi,
+  });
+
+  const [idCollections, setIdCollection] = useState({
+    heading: idCollection?.heading,
+    para: idCollection?.para,
+    content: idCollection?.content,
+  });
+
   const [input, setInput] = useState({
     arrival: "",
     depart: "",
@@ -59,30 +85,64 @@ export default function Payment2() {
     e.preventDefault();
     if (!handleFormValidation()) return;
     console.log("Proceeding with payment...");
+
+    setInput({
+      arrival: "",
+      depart: "",
+      email: "",
+      number: "",
+    });
+    setNavigateInput({
+      arrival: "",
+      departure: "",
+      fullname: "",
+      email: "",
+      telephone: "",
+      roomNumber: "",
+    });
+    setIdCollection({
+      heading: "",
+      para: "",
+      content: "",
+    });
+    setIdHolders({
+      firstLi: "",
+      fouth: "",
+      name: "",
+      price: "",
+      secondLi: "",
+      thirdLi: "",
+    });
   };
 
-  const FromDate = new Date(inputs?.arrival);
-  const ToDate = new Date(inputs?.departure);
-  const totalDate = ToDate.getDate() - FromDate.getDate();
+  const FromDate = new Date(navigateInput?.arrival);
+  const ToDate = new Date(navigateInput?.departure);
+  const totalDate = Math.ceil((ToDate - FromDate) / (1000 * 60 * 60 * 24));
 
-  const price = idCollection?.para.split("₦")[1]?.split(" ")[0];
-  const price2 = idholder?.price.split("₦")[1]?.split(" ")[0];
+  const price = idCollections?.para?.split("₦")[1]?.split(" ")[0];
+  const price2 = idholders?.price?.split("₦")[1]?.split(" ")[0];
   console.log(price2);
+  const zerodate =
+    totalDate === 0
+      ? Number(price?.replace(",", "")) || Number(price2?.replace(",", "") || 0)
+      : 0;
+
   const changePrice = Number(price?.replace(",", "") * totalDate);
   const changePrice2 = Number(price2?.replace(",", "") * totalDate);
   const formattedPrice = new Intl.NumberFormat("en-NG", {
     style: "currency",
     currency: "NGN",
-  }).format(changePrice || changePrice2);
+  }).format(changePrice || changePrice2 || zerodate);
 
   const publicKey = "pk_test_f008b74aed3b3e38328034093253b85eaa8628a6";
-
   const componentProps = {
-    email: inputs?.email || input?.email || "No email provided",
-    amount: (changePrice || changePrice2 || 0) * 100,
+    email: navigateInput?.email || input?.email || "No email provided",
+    amount: (changePrice || changePrice2 || zerodate || 0) * 100,
     metadata: {
-      fullname: inputs?.fullname || input?.fullname || "No name provided",
-      phoneNumber: inputs?.number || input?.number || "No phone provided",
+      fullname:
+        navigateInput?.fullname || input?.fullname || "No name provided",
+      phoneNumber:
+        navigateInput?.number || input?.number || "No phone provided",
     },
     publicKey,
     text: "PLACE ORDER",
@@ -173,11 +233,11 @@ export default function Payment2() {
             <hr />
             <div className="check-in">
               <p>From</p>
-              <h5>{inputs?.arrival || input?.arrival}</h5>
+              <h5>{navigateInput?.arrival || input?.arrival}</h5>
             </div>
             <div className="check-out">
               <p>To</p>
-              <h5>{inputs?.departure || input?.depart}</h5>
+              <h5>{navigateInput?.departure || input?.depart}</h5>
             </div>
             <div className="total-night">
               <p>Total Days</p>
@@ -187,12 +247,16 @@ export default function Payment2() {
               <p>Name</p>
               <h5>
                 {" "}
-                {(inputs?.fullname || input?.fullname || "Guest").toLowerCase()}
+                {(
+                  navigateInput?.fullname ||
+                  input?.fullname ||
+                  "Guest"
+                ).toLowerCase()}
               </h5>
             </div>
             <div className="childrens">
               <p>Room Number</p>
-              <h5>{inputs?.roomNumber || inputs?.room}</h5>
+              <h5>{navigateInput?.roomNumber || inputs?.room}</h5>
             </div>
           </div>
           {/*  */}
@@ -200,7 +264,7 @@ export default function Payment2() {
             <h3>{(idholder && "HALL RENTAL") || "HIRE FEE"}</h3>
             <hr />
             <div className="car-title">
-              {idCollection?.heading || idholder?.name}
+              {idCollections?.heading || idholders?.name}
             </div>
             <hr />
             <div className="total-guest">
@@ -230,7 +294,7 @@ export default function Payment2() {
                   type="text"
                   id="fullname"
                   name="fullname"
-                  value={input?.fullname || inputs?.fullname}
+                  value={input?.fullname || navigateInput?.fullname}
                   onChange={handleOnchange}
                 />
               </div>
@@ -243,7 +307,7 @@ export default function Payment2() {
                     type="text"
                     id="room"
                     name="room"
-                    value={input?.room || inputs?.roomNumber}
+                    value={input?.room || navigateInput?.roomNumber}
                     onChange={handleOnchange}
                   />
                 </div>
@@ -259,7 +323,7 @@ export default function Payment2() {
                   type="email"
                   name="email"
                   id=""
-                  value={input?.email || inputs?.email}
+                  value={input?.email || navigateInput?.email}
                   onChange={handleOnchange}
                 />
               </div>
@@ -270,7 +334,7 @@ export default function Payment2() {
                 <input
                   type="text"
                   name="number"
-                  value={input?.number || inputs?.telephone}
+                  value={input?.number || navigateInput?.telephone}
                   onChange={handleOnchange}
                 />
               </div>

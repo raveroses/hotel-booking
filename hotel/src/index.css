@@ -1911,7 +1911,8 @@ footer {
   } */
   .carousel {
     text-align: center;
-    left: 53px;
+    left: 0;
+    right: 0;
     top: 293px;
     max-width: 100%;
   }
@@ -1940,7 +1941,6 @@ footer {
   .icon {
     top: 353px;
     gap: 250px;
-    left: 42px;
     max-width: 100%;
   }
   .ikon {
@@ -2737,7 +2737,7 @@ footer {
   }
   .contact-flex {
     display: flex;
-    margin: 10px;
+    margin: 20px;
     flex-direction: column;
     gap: 40px;
   }

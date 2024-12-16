@@ -182,14 +182,15 @@ export default function Header({
             <div className="flexo">
               <div></div> <p>{Carousel[controller].content2}</p> <div></div>
             </div>
+            <div
+              className="icon"
+              style={{ visibility: showp ? "visible" : "hidden" }}
+            >
+              <FaArrowCircleLeft className="ikon" onClick={handleDecrease} />
+              <FaArrowCircleRight className="ikon" onClick={handleNext} />
+            </div>
           </div>
-          <div
-            className="icon"
-            style={{ visibility: showp ? "visible" : "hidden" }}
-          >
-            <FaArrowCircleLeft className="ikon" onClick={handleDecrease} />
-            <FaArrowCircleRight className="ikon" onClick={handleNext} />
-          </div>
+
           <div className="date">
             <Date
               show={show}
