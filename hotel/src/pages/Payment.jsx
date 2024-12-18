@@ -90,7 +90,7 @@ export default function Payment({ newArry }) {
     children: newArry?.numberss,
     numberOfDays: numberOfDays,
   });
-  console.log(newArray);
+
   const handleFprmValidation = () => {
     if (
       !detail.firstname ||
@@ -164,6 +164,9 @@ export default function Payment({ newArry }) {
       alert("Wait! Don't leave , Your Transaction is on processing :("),
   };
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <div className="heading-hero">

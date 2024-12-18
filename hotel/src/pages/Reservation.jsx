@@ -24,6 +24,10 @@ export default function Reservation({ newArry }) {
     };
   }, []);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const [reveal, setReveal] = useState(false);
   const handleMenu = () => {
     setReveal((prev) => !prev);

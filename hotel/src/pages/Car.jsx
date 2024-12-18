@@ -8,6 +8,9 @@ import { useNavigate, Link } from "react-router-dom";
 export default function Car() {
   const [show, setShow] = useState(false);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const handleScroll = () => {
     if (window.scrollY > 30) {
       setShow(true);

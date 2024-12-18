@@ -646,7 +646,7 @@ footer {
   width: 40px;
 }
 .payment img {
-  width: 50px;
+  width: 30px;
 }
 .second-layer-flex {
   display: flex;
@@ -1700,6 +1700,11 @@ footer {
   margin-top: 20px;
   margin-bottom: 20px;
 }
+
+footer {
+  width: 100%;
+  max-width: 100%;
+}
 @media (max-width: 480px) {
   .logo-palace {
     display: block;
@@ -2256,7 +2261,7 @@ footer {
     margin: auto;
   }
   .payment img {
-    width: 30px;
+    width: 16px;
   }
   .cl {
     width: 30px;

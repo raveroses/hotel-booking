@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 export default function Date({
   show,
@@ -43,7 +44,9 @@ export default function Date({
     // Navigate to the reservation page if validation passes
     navigate("/reservation");
   };
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <div className="date-flex">

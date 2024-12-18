@@ -4,8 +4,12 @@ import { MdCancel } from "react-icons/md";
 import { PiCaretCircleLeftBold } from "react-icons/pi";
 import { PiCaretCircleRightBold } from "react-icons/pi";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 export default function Buttom() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const arrayImage = [
     { image: "images/bently.jpg", id: 0 },
     { image: "images/songle.jpg", id: 1 },

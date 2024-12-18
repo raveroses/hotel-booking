@@ -63,6 +63,10 @@ export default function Hall() {
     );
   });
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <div className="heading-hero">

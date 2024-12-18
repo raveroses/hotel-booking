@@ -13,6 +13,9 @@ import { useForm, ValidationError } from "@formspree/react";
 export default function Contact() {
   const [show, setShow] = useState(false);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const handleScroll = () => {
     if (window.scrollY > 30) {
       setShow(true);
@@ -40,6 +43,7 @@ export default function Contact() {
   if (state.succeeded) {
     return alert("Thanks for Contacting");
   }
+
   return (
     <>
       <div className="heading-hero">

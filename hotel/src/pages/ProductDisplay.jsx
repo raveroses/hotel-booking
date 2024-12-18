@@ -18,7 +18,9 @@ import { useNavigate } from "react-router-dom";
 export default function ProductDisplay() {
   const location = useLocation();
   const check = location.state || {};
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const navigate = useNavigate();
   const handleOnclick = (id) => {
     navigate("/product", { state: { placeholder: id } });

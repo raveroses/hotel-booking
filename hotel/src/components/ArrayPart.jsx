@@ -2,15 +2,18 @@ import { LiaBedSolid } from "react-icons/lia";
 import { IoWifiOutline } from "react-icons/io5";
 import { IoFastFoodOutline } from "react-icons/io5";
 import { HiMiniArrowsPointingOut } from "react-icons/hi2";
-import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import slidesData from "./slidesData";
+import { useEffect } from "react";
 
 export default function ArrayPart() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <div className="room-price-flex">

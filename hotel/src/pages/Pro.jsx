@@ -10,6 +10,10 @@ import HallArray from "../components/HallArray";
 export default function Pro() {
   const [show, setShow] = useState(false);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const handleScroll = () => {
     if (window.scrollY > 30) {
       setShow(true);

@@ -95,7 +95,9 @@ export default function View() {
       setNumber(container[nextCount].image); // Use the new count to access the image
     }
   };
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <div className="heading-hero">

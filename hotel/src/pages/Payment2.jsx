@@ -34,9 +34,6 @@ export default function Payment2() {
 
   const location = useLocation();
   const { idCollection, inputs, idholder } = location?.state || {};
-  console.log(idholder);
-  console.log(idCollection);
-  console.log(inputs);
 
   const [navigateInput, setNavigateInput] = useState({
     arrival: inputs?.arrival,
@@ -155,6 +152,9 @@ export default function Payment2() {
       alert("Wait! Don't leave , Your Transaction is on processing :("),
   };
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <div className="heading-hero">
