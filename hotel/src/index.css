@@ -152,10 +152,10 @@ html {
 
 .icon {
   position: absolute;
-  top: 350px;
+  top: 90px;
   display: flex;
   justify-content: flex-start;
-  gap: 1100px;
+  gap: 600px;
   align-items: flex-start;
   align-content: center;
   visibility: hidden;

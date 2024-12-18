@@ -19,8 +19,28 @@ export default function Date({
   handleDropDownEffectss,
 }) {
   const navigate = useNavigate();
+  const handleValidation = () => {
+    if (
+      !number ||
+      !numbers ||
+      !numberss ||
+      !dateChecker.arrival ||
+      !dateChecker.departure
+    ) {
+      alert("Please fill all required fields");
+      return false; // Validation failed
+    }
+    return true; // Validation passed
+  };
+
   const handleSubmission = (event) => {
     event.preventDefault();
+
+    if (!handleValidation()) {
+      return; // Stop submission if validation fails
+    }
+
+    // Navigate to the reservation page if validation passes
     navigate("/reservation");
   };
 

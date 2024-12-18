@@ -81,11 +81,12 @@ export default function Payment2() {
     }
     return true;
   };
+
   const handleSubmission = (e) => {
     e.preventDefault();
     if (!handleFormValidation()) return;
-    console.log("Proceeding with payment...");
 
+    // Clear inputs after successful validation
     setInput({
       arrival: "",
       depart: "",
@@ -113,6 +114,8 @@ export default function Payment2() {
       secondLi: "",
       thirdLi: "",
     });
+
+    console.log("Proceeding with payment...");
   };
 
   const FromDate = new Date(navigateInput?.arrival);
